@@ -1,0 +1,25 @@
+package multi_client;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Date;
+
+public class ClientTCP_loop {
+
+	private Socket socket;
+	
+	public ClientTCP_loop() {
+		try {
+			System.out.println(new Date() + " -> Client started.");
+			
+			
+		} catch (IOException e) {
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

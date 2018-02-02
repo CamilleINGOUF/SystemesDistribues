@@ -1,0 +1,19 @@
+package multi_client;
+
+import java.io.IOException;
+
+public class ClientTCP_loop {
+
+	public ClientTCP_loop() {
+		try {
+			
+		} catch (IOException e) {
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

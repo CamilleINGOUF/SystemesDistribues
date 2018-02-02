@@ -1,0 +1,22 @@
+package multi_client_2;
+
+public class ThreadTest extends Thread{
+
+	private long delay;
+	
+	public ThreadTest(long delay)
+	{
+		this.delay = delay;
+	}
+	
+	
+	public void run()
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

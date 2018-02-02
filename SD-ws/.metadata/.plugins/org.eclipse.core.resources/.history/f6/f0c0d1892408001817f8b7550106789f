@@ -1,0 +1,13 @@
+package multi_clients_theads;
+
+import java.net.Socket;
+
+public class Client {
+
+	private Socket socket;
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

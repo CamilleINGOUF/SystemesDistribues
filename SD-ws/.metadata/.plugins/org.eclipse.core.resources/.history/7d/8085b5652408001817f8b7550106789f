@@ -1,0 +1,45 @@
+package multi_clients_theads;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class Server {
+
+	public static final int PORT = 4666;
+	
+	private ServerSocket ss;
+	private Socket client;
+	
+	private ArrayList<ClientRunnable> clients;
+	
+	public Server() throws IOException {
+		ss = new ServerSocket(PORT);
+		
+		boolean isRunning = true;
+		
+		System.out.println("[!] Server started");
+		
+		while(isRunning)
+		{
+			System.out.println("Waiting for a client...");
+			client = ss.accept();
+			System.out.println("[!]Client connected.");
+			
+			ClientRunnable clientR = new ClientRunnable(client);
+			clients.add(clientR);
+			
+			Thread clientT = new Thread(clientR);
+			clientT.start();
+			System.out.println("[!] Client "++" started.");
+			
+			client = null;
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		new Server();
+	}
+
+}

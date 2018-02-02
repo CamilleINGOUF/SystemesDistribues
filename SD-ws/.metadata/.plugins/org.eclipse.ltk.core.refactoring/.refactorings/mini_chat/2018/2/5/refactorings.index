@@ -1,3 +1,8 @@
 1517567099789	Rename package 'mini_chat'
 1517567110431	Rename type 'Server'
 1517574054908	Delete element
+1517577928972	Rename type 'ThreadTest'
+1517580282708	Rename type 'Test_SansSynchronized'
+1517580575260	Rename package 'multi_client_2'
+1517580938586	Rename type 'ClientThread'
+1517583047980	Rename field 'textArea'

@@ -1,0 +1,18 @@
+package multi_clients_theads;
+
+import java.net.Socket;
+
+public class ClientRunnable implements Runnable {
+
+	private Socket client;
+	
+	public ClientRunnable(Socket socket) {
+		client = socket;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+
+}

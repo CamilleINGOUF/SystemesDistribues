@@ -1,0 +1,11 @@
+package multi_clients_theads;
+
+public class ClientRunnable implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,35 @@
+package multi_client_2;
+
+import java.util.Iterator;
+
+public class ThreadTest extends Thread{
+
+	private long delay;
+	
+	public ThreadTest(long delay)
+	{
+		this.delay = delay;
+	}
+	
+	@Override
+	public void run()
+	{
+		for (int i = 0; i < 10; i++) 
+		{
+			System.out.println(getName()+" "+i);
+			
+			try {
+				Thread.sleep(delay);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		Thread t1 = new ThreadTest(300);
+	}
+
+}

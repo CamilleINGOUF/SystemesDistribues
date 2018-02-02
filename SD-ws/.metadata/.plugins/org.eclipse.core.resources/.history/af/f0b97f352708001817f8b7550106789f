@@ -1,0 +1,28 @@
+package multi_clients_theads;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ClientGUI extends JFrame{
+	
+	Client client;
+	
+	public ClientGUI() {
+		//setup();
+		client = new Client();
+	}
+	
+	private void setup()
+	{
+		JPanel mainPanel = new JPanel(new BorderLayout());
+		add(mainPanel);
+		
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new ClientGUI();
+	}
+}

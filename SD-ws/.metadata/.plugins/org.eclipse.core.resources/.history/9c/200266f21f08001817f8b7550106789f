@@ -1,0 +1,17 @@
+package multi_client_2;
+
+public class Test_SansSynchronized {
+
+	private static double taux = 0.05;
+	
+	static Double solde = new Double(0);
+	
+	public void crediter(double val) {
+		
+	}
+	
+	public static void main(String[] args) {
+
+	}
+
+}

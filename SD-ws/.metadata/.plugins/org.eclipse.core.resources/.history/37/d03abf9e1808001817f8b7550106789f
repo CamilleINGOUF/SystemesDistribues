@@ -1,0 +1,48 @@
+package multi_client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Date;
+
+public class ServerTCP_loop {
+
+	boolean running = true;
+	
+	ServerSocket ss;
+	Socket client;
+	
+	public ServerTCP_loop() {
+		try {
+			ss = new ServerSocket(TCP_loop_helper.PORT);
+			
+			int i;
+			while(running)
+			{
+				System.out.println(new Date() + " -> Server ready");
+				client = ss.accept();
+				System.out.println(new Date() + " -> Client connected");
+				
+				BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
+				String message = new String();
+				while((message = reader.readLine()).compareTo(TCP_loop_helper.END_OF_MESSAGE) != 0)
+				{
+					System.out.println("Client : "+message);
+				}
+				
+				
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		new ServerTCP_loop();
+	}
+
+}

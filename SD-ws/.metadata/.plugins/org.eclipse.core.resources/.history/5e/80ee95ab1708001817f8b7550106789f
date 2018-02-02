@@ -1,0 +1,30 @@
+package multi_client;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Date;
+
+public class ClientTCP_loop {
+
+	private Socket socket;
+	
+	public ClientTCP_loop() {
+		try {
+			System.out.println(new Date() + " -> Client started.");
+			socket = new Socket("localhost", TCP_loop_helper.PORT);
+			System.out.println(new Date() + " -> Client connected.");
+			
+			PrintWriter out = new PrintWriter(socket.getOutputStream());
+			
+			
+		} catch (IOException e) {
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
