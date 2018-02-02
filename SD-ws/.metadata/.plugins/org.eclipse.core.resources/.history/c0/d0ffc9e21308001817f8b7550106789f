@@ -1,0 +1,10 @@
+package mini_chat_udp;
+
+import java.net.InetAddress;
+
+public class ClientUDP {
+	public ClientUDP() {
+		InetAddress address = InetAddress.getByName("localhost");
+		
+	}
+}

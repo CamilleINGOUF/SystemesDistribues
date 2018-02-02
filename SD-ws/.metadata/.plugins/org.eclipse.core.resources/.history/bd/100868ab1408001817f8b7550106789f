@@ -1,0 +1,13 @@
+package mini_chat_udp;
+
+import java.net.DatagramSocket;
+
+public class ServerUDP {
+
+	public static final int PORT = 4666;
+	
+	public ServerUDP() {
+		DatagramSocket socket = new DatagramSocket(PORT);
+	}
+	
+}

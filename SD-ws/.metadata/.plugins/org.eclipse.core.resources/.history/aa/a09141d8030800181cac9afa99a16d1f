@@ -1,0 +1,23 @@
+package mini_chat_tcp;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerTCP {
+	private Socket socket;
+	private ServerSocket ss;
+	
+	public static final int PORT = 6666; 
+	
+	public ServerTCP() {
+		try {
+			ss = new ServerSocket(PORT);
+			System.out.println("Server opened on port "+PORT);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

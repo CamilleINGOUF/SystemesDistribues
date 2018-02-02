@@ -1,0 +1,10 @@
+/* *******************************************************************
+Pour générer les stubs et squetelles (dans un terminal) :
+
+1/ Aller dans le dossier contenant le fichier idl		
+
+2/ (à chaque changement du fichier idl)
+-> idlj­ -fall nom_fichier.idl
+-> rafraichir l'explorateur dans Eclipse
+
+******************************************************************* */

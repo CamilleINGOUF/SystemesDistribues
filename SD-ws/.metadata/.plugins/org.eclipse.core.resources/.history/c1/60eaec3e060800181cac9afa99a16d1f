@@ -1,0 +1,16 @@
+package mini_chat_tcp;
+
+import java.io.IOException;
+import java.net.Socket;
+
+public class ClientTCP {
+	private Socket socket;
+	
+	public ClientTCP() {
+		try {
+			socket = new Socket("localhost", ServerTCP.PORT);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

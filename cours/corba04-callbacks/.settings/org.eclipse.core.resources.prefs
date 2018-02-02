@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//src/callbacks.idl=UTF-8
+encoding//src/callbacks/client/CallbackClientImpl.java=UTF-8
+encoding//src/callbacks/server/CallbackServerImpl.java=UTF-8

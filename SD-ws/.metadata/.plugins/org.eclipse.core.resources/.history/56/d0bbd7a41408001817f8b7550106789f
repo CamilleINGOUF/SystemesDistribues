@@ -1,0 +1,11 @@
+package mini_chat_udp;
+
+public class ServerUDP {
+
+	public static final int PORT = 4666;
+	
+	public ServerUDP() {
+		
+	}
+	
+}
