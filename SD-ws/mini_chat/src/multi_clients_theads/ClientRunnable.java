@@ -42,6 +42,7 @@ public class ClientRunnable implements Runnable {
 		catch (IOException e) 
 		{
 			System.out.println("Client deconnected");
+			server.removeClient(this);
 		} 
 		finally 
 		{

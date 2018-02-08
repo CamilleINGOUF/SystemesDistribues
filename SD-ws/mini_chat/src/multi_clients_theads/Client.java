@@ -47,15 +47,6 @@ public class Client extends Thread{
 			e.printStackTrace();
 		}
 	}
-
-	public void disconnect()
-	{
-		try {
-			socket.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public void register(Observer o)
 	{

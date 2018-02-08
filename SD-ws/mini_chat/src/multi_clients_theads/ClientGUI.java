@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 
 public class ClientGUI extends JFrame implements Observer{
 	
+	private static final long serialVersionUID = 1L;
+
 	Client client;
 	
 	JPanel mainPanel;
@@ -40,13 +42,14 @@ public class ClientGUI extends JFrame implements Observer{
 		
 		mainPanel.add(textField,BorderLayout.SOUTH);
 		
-		textArea = new JTextArea(10,50);
+		textArea = new JTextArea(10,60);
 		textArea.setEditable(false);
 		mainPanel.add(textArea, BorderLayout.WEST);
 		
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
+		setResizable(false);
 		setVisible(true);
 		
 		textField.addActionListener(new ActionListener() {
