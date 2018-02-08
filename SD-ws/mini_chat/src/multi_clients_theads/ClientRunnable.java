@@ -12,6 +12,8 @@ public class ClientRunnable implements Runnable {
 	
 	private Server server;
 	
+	private String name;
+	
 	private BufferedReader in;
 	private PrintWriter out;
 	
@@ -20,6 +22,7 @@ public class ClientRunnable implements Runnable {
 		this.server = server;
 		try {
 			in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+			name = in.readLine();
 			out = new PrintWriter(socket.getOutputStream());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -33,13 +36,16 @@ public class ClientRunnable implements Runnable {
 			String message = new String();
 			while((message = in.readLine()) != null)
 			{
-				System.out.println(message);
-				server.sendMessage(message);
+				server.sendMessage(name+" => "+message);
 			}
 		} 
 		catch (IOException e) 
 		{
-			e.printStackTrace();
+			System.out.println("Client deconnected");
+		} 
+		finally 
+		{
+			
 		}
 	}
 	
@@ -47,6 +53,11 @@ public class ClientRunnable implements Runnable {
 	{
 		out.println(message);
 		out.flush();
+	}
+	
+	public String getName()
+	{
+		return name;
 	}
 
 }
