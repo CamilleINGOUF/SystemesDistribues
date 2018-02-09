@@ -1,0 +1,92 @@
+package multi_clients_theads;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ClientGUI extends JFrame implements Observer{
+	
+	private static final long serialVersionUID = 1L;
+
+	Client client;
+	
+	JPanel mainPanel;
+	JTextField textField;
+	JTextArea messages;
+	JTextArea clientsName;
+	
+	private String name;
+	
+	public ClientGUI() {
+		setup();
+		client = new Client(name);
+		client.register(this);
+	}
+	
+	private void setup()
+	{
+		name = JOptionPane.showInputDialog(this,"What's your name ?");
+		if(name == null || name.equals(""))
+			name = new String("Guest");
+		
+		mainPanel = new JPanel(new BorderLayout());
+		add(mainPanel);
+		
+		textField = new JTextField();
+		textField.setSize(800, 150);
+		
+		mainPanel.add(textField,BorderLayout.SOUTH);
+		
+		messages = new JTextArea(10,60);
+		messages.setEditable(false);
+		mainPanel.add(messages, BorderLayout.WEST);
+		
+		clientsName = new JTextArea(50, 150);
+		clientsName.setEditable(false);
+		clientsName.setBackground(new Color);
+		mainPanel.add(clientsName, BorderLayout.EAST);
+		
+		setSize(800, 600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+		
+		textField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				client.sendMessage(textField.getText());
+				textField.setText("");
+			}
+		});
+	}
+	
+	private void processMessage(String message)
+	{
+		if(message.substring(0, 9).equals("%message%"))
+		{
+			messages.append(message.substring(9)+"\n");
+		}
+		else
+		{
+			clientsName.setText(message.substring(9));
+		}
+	}
+	
+	@Override
+	public void update(String message) 
+	{
+		processMessage(message);
+	}
+	
+	public static void main(String[] args) {
+		new ClientGUI();
+	}
+}

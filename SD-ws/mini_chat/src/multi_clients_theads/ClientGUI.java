@@ -1,14 +1,25 @@
 package multi_clients_theads;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
 
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ClientGUI extends JFrame implements Observer{
 	
@@ -18,13 +29,17 @@ public class ClientGUI extends JFrame implements Observer{
 	
 	JPanel mainPanel;
 	JTextField textField;
-	JTextArea textArea;
+	JTextArea messages;
+	JTextArea clientsName;
 	
 	private String name;
 	
+	private byte[] imageSize;
+	private ByteArrayOutputStream byteArrayOutputStream;
+	
 	public ClientGUI() {
 		setup();
-		client = new Client(name);
+		client = new Client(name/*+";"+imageSize+";"+byteArrayOutputStream.toByteArray()*/);
 		client.register(this);
 	}
 	
@@ -33,6 +48,34 @@ public class ClientGUI extends JFrame implements Observer{
 		name = JOptionPane.showInputDialog(this,"What's your name ?");
 		if(name == null || name.equals(""))
 			name = new String("Guest");
+
+		FileFilter imagesFilter = new FileNameExtensionFilter("jpg", "jpeg", "png");
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Choose an avatar");
+		fileChooser.addChoosableFileFilter(imagesFilter);
+		int result = fileChooser.showOpenDialog(null); 
+		 
+		if (result == JFileChooser.APPROVE_OPTION)
+        {
+            String filename = fileChooser.getSelectedFile().getPath();
+            JOptionPane.showMessageDialog(null, "You selected " + filename);
+            try {
+				BufferedImage image = ImageIO.read(new File(filename));
+	            byteArrayOutputStream = new ByteArrayOutputStream();
+	            ImageIO.write(image, "jpg", byteArrayOutputStream);
+	            imageSize = ByteBuffer.allocate(4).putInt(byteArrayOutputStream.size()).array();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+        }
+        else if (result == JFileChooser.CANCEL_OPTION)
+        {   
+            JOptionPane.showMessageDialog(null, "You selected nothing.");
+        }
+        else if (result == JFileChooser.ERROR_OPTION)
+        {
+            JOptionPane.showMessageDialog(null, "An error occurred.");  
+        }         
 		
 		mainPanel = new JPanel(new BorderLayout());
 		add(mainPanel);
@@ -42,9 +85,19 @@ public class ClientGUI extends JFrame implements Observer{
 		
 		mainPanel.add(textField,BorderLayout.SOUTH);
 		
-		textArea = new JTextArea(10,60);
-		textArea.setEditable(false);
-		mainPanel.add(textArea, BorderLayout.WEST);
+		messages = new JTextArea(10,60);
+		messages.setEditable(false);
+		messages.setWrapStyleWord(true);
+		JScrollPane scrollPane = new JScrollPane(messages);
+		mainPanel.add(scrollPane, BorderLayout.WEST);
+		
+		clientsName = new JTextArea(5,12);
+		clientsName.setSize(600, 10);
+		clientsName.setEditable(false);
+		clientsName.setBackground(Color.LIGHT_GRAY);
+		JScrollPane scrollPaneClients = new JScrollPane(clientsName);
+		clientsName.setWrapStyleWord(true);
+		mainPanel.add(scrollPaneClients, BorderLayout.EAST);
 		
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,10 +114,30 @@ public class ClientGUI extends JFrame implements Observer{
 		});
 	}
 	
+	private void processMessage(String message)
+	{
+		if(message.substring(0, 9).equals("%message%"))
+		{
+			messages.append(message.substring(9)+"\n");
+		}
+		else
+		{
+			showClientsNames(message.substring(9));
+		}
+	}
+	
+	private void showClientsNames(String str)
+	{
+		clientsName.setText("");
+		String strs[] = str.split(";");
+		for(String s : strs)
+			clientsName.append(s+"\n");
+	}
+	
 	@Override
 	public void update(String message) 
 	{
-		textArea.append(message+"\n");
+		processMessage(message);
 	}
 	
 	public static void main(String[] args) {

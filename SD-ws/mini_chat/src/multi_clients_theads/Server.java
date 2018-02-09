@@ -36,19 +36,34 @@ public class Server {
 			System.out.println("[!]Client "+clients.indexOf(clientR)+" started.");
 			
 			client = null;
+			sendClient();
 		}
 	}
 	
 	public void removeClient(ClientRunnable client)
 	{
 		clients.remove(client);
+		sendMessage(client.getName()+" disconnected.");
+		sendClient();
 	}
 	
 	public void sendMessage(String message)
 	{
 		for(ClientRunnable client : clients)
 		{
-			client.sendMessage(message);
+			client.sendMessage("%message%"+message);
+		}
+	}
+	
+	public void sendClient()
+	{
+		String message = new String();
+		for(ClientRunnable client : clients)
+			message+=client.getName()+";";
+		
+		for(ClientRunnable client : clients)
+		{
+			client.sendMessage("%clients%"+message);
 		}
 	}
 	
