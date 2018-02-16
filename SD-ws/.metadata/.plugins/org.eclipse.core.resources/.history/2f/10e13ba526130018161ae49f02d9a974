@@ -121,7 +121,6 @@ public class ClientGUI extends JFrame implements Observer{
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setVisible(true);
-		setTitle(name);
 		
 		textField.addActionListener(new ActionListener() {
 			@Override
