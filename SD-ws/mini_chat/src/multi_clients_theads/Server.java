@@ -43,15 +43,33 @@ public class Server {
 	public void removeClient(ClientRunnable client)
 	{
 		clients.remove(client);
-		sendMessage(client.getName()+" disconnected.");
+		sendMessage("%from%SERVEUR%/from%%all%"+client.getName()+" disconnected.");
 		sendClient();
 	}
 	
 	public void sendMessage(String message)
 	{
-		for(ClientRunnable client : clients)
+		String[] senderMessage = ServerUtil.getSender(message);
+		
+		if(ServerUtil.getMessageType(senderMessage[1]) == ServerUtil.ALL)
 		{
-			client.sendMessage("%message%"+message);
+			String cleanMessage = ServerUtil.cleanMessageForAll(senderMessage[1]);
+			for(ClientRunnable client : clients)
+			{
+				client.sendMessage("%message%"+senderMessage[0]+" => "+cleanMessage);
+			}
+		}
+		else//whisper
+		{
+			String targets[] = ServerUtil.getTargetsWhisper(senderMessage[1]);
+			String prefix = new String("%message%"+senderMessage[0] + " TO ");
+			for(String target : targets)
+				prefix += target + " ";
+			prefix += "=> ";
+			String cleanedMessage = ServerUtil.cleanMessageFortWhisper(senderMessage[1]);
+			for(String s : targets)
+				sendMessageToClientbyName(s,prefix+cleanedMessage);
+			sendMessageToClientbyName(senderMessage[0], prefix+cleanedMessage);
 		}
 	}
 	
@@ -65,6 +83,21 @@ public class Server {
 		{
 			client.sendMessage("%clients%"+message);
 		}
+	}
+	
+	public void sendMessageToClientbyName(String name, String message)
+	{
+		getClientByName(name).sendMessage(message);
+	}
+	
+	public ClientRunnable getClientByName(String name)
+	{
+		for(ClientRunnable cli : clients)
+		{
+			if(cli.getName().equals(name))
+				return cli;
+		}
+		return null;
 	}
 	
 	public static void main(String[] args) throws IOException {

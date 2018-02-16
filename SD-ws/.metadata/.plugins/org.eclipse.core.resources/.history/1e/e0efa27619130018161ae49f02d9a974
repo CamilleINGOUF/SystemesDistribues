@@ -1,0 +1,10 @@
+package multi_clients_theads;
+
+public class ServerUtil {
+	
+	public static final int WHISPER = 0;
+	public static final int ALL = 1;
+	
+	
+	
+}

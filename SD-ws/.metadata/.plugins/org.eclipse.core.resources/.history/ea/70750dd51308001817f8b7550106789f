@@ -1,7 +1,0 @@
-package mini_chat_udp;
-
-public class ClientUDP {
-	public ClientUDP() {
-		
-	}
-}
