@@ -3,9 +3,14 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -23,27 +28,30 @@ public class ClientGUY extends JFrame implements Observer
 	private static final long serialVersionUID = 1L;
 
 	private Client client;
-	
+
 	private JTextArea display;
 	private JTextField text;
 	private JList<String> group;
-	
+
 	private String name;
-	
+	private ImageIcon image;
+
 	public ClientGUY() 
 	{
-		
+
 		name = JOptionPane.showInputDialog(this,"What's your name ?");
-		
+
 		if(name == null)
 			System.exit(0);
-		
+
 		if(name.equals(""))
 			name = new String("Guest");
-		
+
+		selectImage();
+
 		BuildUI();
-		client = new Client(name,this);
-		
+		client = new Client(name,this,image);
+
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -51,30 +59,52 @@ public class ClientGUY extends JFrame implements Observer
 		setVisible(true);
 		setTitle("Client - "+name);
 	}
-	
+
+	private void selectImage() 
+	{
+		JFileChooser fc = new JFileChooser();
+		int result = fc.showOpenDialog(null);
+		if (result == JFileChooser.APPROVE_OPTION) 
+		{
+			File file = fc.getSelectedFile();
+			try 
+			{
+				image = new ImageIcon(ImageIO.read(file));
+			} 
+			catch (IOException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		else
+		{
+			image = null;
+		}
+	}
+
 	private void BuildUI()
 	{
 		getContentPane().setLayout(new BorderLayout());
-		
+
 		text = new JTextField();
 		getContentPane().add(text, BorderLayout.SOUTH);
 		text.grabFocus();
-		
+
 		display = new JTextArea();
 		display.setEditable(false);
 		display.setLineWrap(true);
 		JScrollPane scroll = new JScrollPane(display);
 		add(scroll, BorderLayout.CENTER);
 		getContentPane().add(scroll, BorderLayout.CENTER);
-		
+
 		group = new JList<>();
 		group.setPrototypeCellValue("Greg is ze Best !");
 		scroll = new JScrollPane(group);
 		add(scroll, BorderLayout.EAST);
-		
+
 		addListeners();
 	}
-	
+
 	private void addListeners() {
 		text.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent ev) {
@@ -104,7 +134,7 @@ public class ClientGUY extends JFrame implements Observer
 		client.shutdown();
 		System.exit(0);
 	}
-	
+
 	public static void main(String[] args)
 	{
 		new ClientGUY();
