@@ -1,0 +1,17 @@
+import java.rmi.Naming;
+
+public class ParrotClient {
+	public ParrotClient() 
+	{
+		try 
+		{
+			Parrot p = (Parrot) Naming.lookup("rmi://localhost/Guy");
+			
+			p.repeat("Hello Guy !");
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}

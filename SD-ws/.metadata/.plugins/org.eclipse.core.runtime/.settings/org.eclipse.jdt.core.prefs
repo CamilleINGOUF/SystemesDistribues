@@ -7,3 +7,4 @@ org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.source=1.8
 org.eclipse.jdt.core.userLibrary.CONNECTOR=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/etudiants/cingouf/Documents/BDD/TD1/CONNECTOR/mysql-connector-java-5.1.45-bin.jar"/>\n</userlibrary>\n
+org.eclipse.jdt.core.userLibrary.Oracle=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/etudiants/cingouf/Documents/BDD/TD2/ojdbc6.jar"/>\n</userlibrary>\n

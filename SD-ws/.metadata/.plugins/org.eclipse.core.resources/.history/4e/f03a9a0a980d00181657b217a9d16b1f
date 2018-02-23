@@ -1,6 +1,0 @@
-package multi_clients_theads;
-
-public enum MessageType {
-	MESSAGE,
-	PROFILS,
-}

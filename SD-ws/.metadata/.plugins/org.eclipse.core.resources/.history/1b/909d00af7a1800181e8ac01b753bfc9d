@@ -1,0 +1,17 @@
+import java.rmi.RemoteException;
+import java.util.Date;
+
+public class ParrotImpl implements Parrot {
+
+	@Override
+	public void repeat(String msg) throws RemoteException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Date watTime() throws RemoteException {
+		return null;
+	}
+
+}

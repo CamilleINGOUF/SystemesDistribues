@@ -1,0 +1,35 @@
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+
+public class ParrotClient implements ClientInterface {
+	
+	public String name = "GuyClient";
+	
+	public ParrotClient() 
+	{
+		try 
+		{
+			
+			Parrot serv = (Parrot) Naming.lookup("rmi://localhost/Guy");
+			
+			
+			serv.repeat("Hello Guy !");
+			System.out.println("Guy : "+serv.watTime());
+			serv.register(this);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		new ParrotClient();
+	}
+
+	@Override
+	public void showYourName() throws RemoteException 
+	{
+		System.out.println("My name is "+name);
+	}
+}

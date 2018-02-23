@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;p&apos; in &apos;ParrotClient.ParrotClient()&apos; to &apos;serv&apos;&#x0A;- Original project: &apos;RMI-parrot-client&apos;&#x0A;- Original element: &apos;ParrotClient.ParrotClient().p&apos;&#x0A;- Renamed element: &apos;p&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;p&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{ParrotClient.java[ParrotClient~ParrotClient@p!197!253!204!204!QParrot;!0!false" name="serv" references="true" stamp="1519381528517" version="1.0"/>
+</session>

@@ -1,0 +1,31 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.Date;
+
+public class ParrotImpl implements Parrot 
+{
+	public ParrotImpl() 
+	{
+		try
+		{
+			String name = "Guy";
+			Parrot stub = (Parrot)UnicastRemoteObject.exportObject(this,0);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void repeat(String msg) throws RemoteException {
+		System.out.println("Repeating "+msg);
+	}
+
+	@Override
+	public Date watTime() throws RemoteException {
+		Date date = new Date();
+		System.out.println("I'm giving the date "+date);
+		return date;
+	}
+}
