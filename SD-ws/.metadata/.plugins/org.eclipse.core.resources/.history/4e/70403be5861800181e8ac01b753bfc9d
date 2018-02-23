@@ -1,0 +1,17 @@
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+
+import common.ClientInterface;
+import common.ServerInterface;
+
+public class Server implements ServerInterface{
+
+	private ArrayList<ClientInterface> clients;
+	
+	@Override
+	public void register(ClientInterface client) throws RemoteException 
+	{
+		
+	}
+
+}

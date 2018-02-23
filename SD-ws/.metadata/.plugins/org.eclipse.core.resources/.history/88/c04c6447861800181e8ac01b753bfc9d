@@ -1,0 +1,11 @@
+import common.ClientInterface;
+
+public class Client implements ClientInterface
+{
+	ClientInterface stub;
+	
+	public Client() 
+	{
+		
+	}
+}

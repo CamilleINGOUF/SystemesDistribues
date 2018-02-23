@@ -1,0 +1,13 @@
+import java.rmi.RemoteException;
+
+import common.ClientInterface;
+import common.ServerInterface;
+
+public class Server implements ServerInterface{
+
+	@Override
+	public void register(ClientInterface client) throws RemoteException {
+		
+	}
+
+}

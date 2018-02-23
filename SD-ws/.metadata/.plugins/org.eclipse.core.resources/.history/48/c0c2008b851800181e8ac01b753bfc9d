@@ -1,0 +1,12 @@
+package common;
+
+public class Message 
+{
+	String from;
+	String to;
+	
+	public Message(Strong from, String to) 
+	{
+		
+	}
+}
