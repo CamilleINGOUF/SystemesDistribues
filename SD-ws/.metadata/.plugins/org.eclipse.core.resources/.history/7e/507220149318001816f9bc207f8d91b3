@@ -1,0 +1,36 @@
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ClientGUY extends JFrame 
+{
+	Client client;
+	
+	JTextArea myDisplay;
+	JTextField myText ;
+	JList myGroup ;
+	
+	public ClientGUY() 
+	{
+		BuildUI();
+		client = new Client();
+		
+		setSize(800, 600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+		setTitle("Client");
+	}
+	
+	private void BuildUI()
+	{
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		new ClientGUY();
+	}
+}

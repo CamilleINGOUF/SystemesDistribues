@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+import common.Common;
+import common.Message;
+
+public interface Observer {
+	public void update(Common common);
+}

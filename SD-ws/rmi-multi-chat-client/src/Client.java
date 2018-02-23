@@ -1,20 +1,27 @@
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 import common.ClientInterface;
+import common.ClientList;
 import common.Message;
 import common.ServerInterface;
 
 public class Client implements ClientInterface
 {
-	ClientInterface stub;
-	ServerInterface serv;
+	public ClientInterface stub;
+	public ServerInterface serv;
 	
-	String name;
+	private String name;
 	
-	public Client() 
+	public ArrayList<Observer> obs;
+	
+	public Client(String name, ClientGUY clientGUY) 
 	{
+		this.name = name;
+		obs = new ArrayList<>();
+		obs.add(clientGUY);
 		try {
 			stub = (ClientInterface) UnicastRemoteObject.exportObject(this, 0) ;
 			serv = (ServerInterface) Naming.lookup("rmi://localhost/Server");
@@ -27,7 +34,30 @@ public class Client implements ClientInterface
 	@Override
 	public void printMessage(Message message) throws RemoteException
 	{
-		System.out.println(message.message);
+		notifyObservers(message);
+	}
+	
+	private void notifyObservers(Message message)
+	{
+		for(Observer o : obs)
+			o.update(message);
+	}
+	
+	public void sendMessage(Message message)
+	{
+		try 
+		{
+			if(message.isForAll())
+				serv.sendMessageToAll(message);
+			else
+			{
+				serv.sendWhisper(message);
+			}
+		} 
+		catch (RemoteException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -36,7 +66,24 @@ public class Client implements ClientInterface
 		return name;
 	}
 	
-	public static void main(String[] args) {
-		new Client();
+	public void registerObserver(Observer o)
+	{
+		obs.add(o);
+	}
+
+	@Override
+	public void printClients(ClientList clients) throws RemoteException 
+	{
+		for(Observer o : obs)
+			o.update(clients.clients);
+	}
+
+	public void shutdown() 
+	{
+		try {
+			serv.remove(stub);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

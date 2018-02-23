@@ -1,0 +1,10 @@
+import javax.swing.JFrame;
+
+public class ClientGUY extends JFrame 
+{
+	Client client;
+	
+	public ClientGUY() {
+	
+	}
+}

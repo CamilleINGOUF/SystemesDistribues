@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="mini_chat_tcp.ServerTCP"/>
-<fullyQualifiedTypeName name="mini_chat_udp.ClientUDP"/>
-<fullyQualifiedTypeName name="java.net.DatagramSocket"/>
-<fullyQualifiedTypeName name="java.net.InetAddress"/>
-<fullyQualifiedTypeName name="java.lang.ReflectiveOperationException"/>
-<fullyQualifiedTypeName name="java.net.DatagramPacket"/>
-<fullyQualifiedTypeName name="mini_chat_udp.ServerUDP"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
-<fullyQualifiedTypeName name="java.nio.channels.SocketChannel"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.nio.channels.WritableByteChannel"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="multi_client.ClientTCP_loop"/>
 <fullyQualifiedTypeName name="multi_client.ServerTCP_loop"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="multi_client.TCP_loop_helper"/>
 <fullyQualifiedTypeName name="multi_client_2.ThreadTest"/>
 <fullyQualifiedTypeName name="multi_client_2.ThreadImplements"/>
@@ -36,7 +22,6 @@
 <fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="multi_clients_theads.Observer"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
@@ -60,4 +45,19 @@
 <fullyQualifiedTypeName name="multi_clients_theads.ServerUtil"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="multi_clients_theads.ClientRunnable"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="Parrot"/>
+<fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
+<fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
+<fullyQualifiedTypeName name="java.rmi.Naming"/>
+<fullyQualifiedTypeName name="ParrotImpl"/>
+<fullyQualifiedTypeName name="ParrotClient"/>
+<fullyQualifiedTypeName name="ClientInterface"/>
+<fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="common.ClientInterface"/>
+<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+<fullyQualifiedTypeName name="Server"/>
+<fullyQualifiedTypeName name="Client"/>
+<fullyQualifiedTypeName name="common.ServerInterface"/>
 </qualifiedTypeNameHistroy>

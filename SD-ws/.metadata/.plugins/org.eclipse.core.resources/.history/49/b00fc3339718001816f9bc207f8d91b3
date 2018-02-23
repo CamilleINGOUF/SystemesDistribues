@@ -1,0 +1,29 @@
+package common;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Message implements Serializable
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public String from;
+	public ArrayList<String> to;
+	
+	public String message;
+	
+	public Message(String from, ArrayList<String> to, String message) 
+	{
+		this.from = from;
+		this.to = to;
+		
+		this.message = message;
+	}
+	
+	public boolean isForAll()
+	{
+		return to == null;
+	}
+}

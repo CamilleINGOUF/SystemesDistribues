@@ -1,0 +1,13 @@
+package common;
+
+import java.util.ArrayList;
+
+public class ClientList implements Common
+{
+	public ArrayList<String> client = new ArrayList<>();
+	
+	public ClientList(ArrayList<String> clients)
+	{
+		this.client = clients;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;client&apos; in &apos;common.ClientList&apos; to &apos;clients&apos;&#x0A;- Original project: &apos;rmi-multi-chat&apos;&#x0A;- Original element: &apos;common.ClientList.client&apos;&#x0A;- Renamed element: &apos;common.ClientList.clients&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;client&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;common{ClientList.java[ClientList^client" name="clients" references="true" setter="false" stamp="1519390824002" textual="false" version="1.0"/>
+</session>

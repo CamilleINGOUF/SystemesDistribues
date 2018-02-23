@@ -1,0 +1,5 @@
+import common.Common;
+
+public interface Observer {
+	public void update(Common common);
+}

@@ -1,0 +1,25 @@
+import javax.swing.JFrame;
+
+public class ClientGUY extends JFrame 
+{
+	Client client;
+	
+	public ClientGUY() 
+	{
+		BuildUI();
+		client = new Client();
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		set
+	}
+	
+	private void BuildUI()
+	{
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		new ClientGUY();
+	}
+}

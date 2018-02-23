@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;c&apos; in &apos;Server.updateClientList()&apos; to &apos;cli&apos;&#x0A;- Original project: &apos;rmi-multi-chat-server&apos;&#x0A;- Original element: &apos;Server.updateClientList().c&apos;&#x0A;- Renamed element: &apos;c&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;c&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Server.java[Server~updateClientList@c!1168!1194!1184!1184!QClientInterface;!0!false" name="cli" references="true" stamp="1519391328485" version="1.0"/>
+</session>

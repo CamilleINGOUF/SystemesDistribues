@@ -1,0 +1,53 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ClientGUY extends JFrame 
+{
+	Client client;
+	
+	JTextArea display;
+	JTextField text ;
+	JList<String> group ;
+	
+	public ClientGUY() 
+	{
+		BuildUI();
+		client = new Client();
+		
+		setSize(800, 600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+		setTitle("Client");
+	}
+	
+	private void BuildUI()
+	{
+		getContentPane().setLayout(new BorderLayout());
+		
+		text = new JTextField();
+		getContentPane().add(text, BorderLayout.SOUTH);
+		text.grabFocus();
+		
+		display = new JTextArea();
+		display.setEditable(false);
+		display.setLineWrap(true);
+		getContentPane().add(display, BorderLayout.CENTER);
+		
+		group = new JList<>();
+		group.setPrototypeCellValue("Greg is ze Best !") ;
+		scroll = new JScrollPane(myGroup) ;
+		add(scroll, BorderLayout.EAST) ;
+	}
+	
+	public static void main(String[] args) 
+	{
+		new ClientGUY();
+	}
+}

@@ -1,0 +1,17 @@
+import javax.swing.JFrame;
+
+public class ClientGUY extends JFrame 
+{
+	Client client;
+	
+	public ClientGUY() 
+	{
+		BuildUI();
+		client = new Client();
+	}
+	
+	private void BuildUI()
+	{
+		
+	}
+}
