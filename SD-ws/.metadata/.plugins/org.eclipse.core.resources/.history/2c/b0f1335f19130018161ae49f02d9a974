@@ -1,7 +1,0 @@
-package multi_clients_theads;
-
-public class ServerUtil {
-	
-	public static final int WHISPER = 0;
-	
-}

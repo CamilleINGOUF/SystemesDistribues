@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="multi_client.ClientTCP_loop"/>
-<fullyQualifiedTypeName name="multi_client.ServerTCP_loop"/>
-<fullyQualifiedTypeName name="multi_client.TCP_loop_helper"/>
-<fullyQualifiedTypeName name="multi_client_2.ThreadTest"/>
-<fullyQualifiedTypeName name="multi_client_2.ThreadImplements"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="multi_client_2.Test_SansSynchronized"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
@@ -16,16 +10,12 @@
 <fullyQualifiedTypeName name="multi_clients_theads.ClientGUI"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="multi_clients_theads.Client"/>
-<fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="multi_clients_theads.Observer"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
-<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="multi_clients_theads.MessageType"/>
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
@@ -41,11 +31,8 @@
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
 <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
-<fullyQualifiedTypeName name="javax.swing.JList"/>
 <fullyQualifiedTypeName name="multi_clients_theads.ServerUtil"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="multi_clients_theads.ClientRunnable"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="Parrot"/>
 <fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
 <fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
@@ -54,10 +41,23 @@
 <fullyQualifiedTypeName name="ParrotClient"/>
 <fullyQualifiedTypeName name="ClientInterface"/>
 <fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="common.ClientInterface"/>
-<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
 <fullyQualifiedTypeName name="Server"/>
-<fullyQualifiedTypeName name="Client"/>
 <fullyQualifiedTypeName name="common.ServerInterface"/>
+<fullyQualifiedTypeName name="Client"/>
+<fullyQualifiedTypeName name="ClientGUY"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JList"/>
+<fullyQualifiedTypeName name="Observer"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="common.ClientList"/>
+<fullyQualifiedTypeName name="common.Common"/>
+<fullyQualifiedTypeName name="common.Message"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+<fullyQualifiedTypeName name="common.ClientInterface"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

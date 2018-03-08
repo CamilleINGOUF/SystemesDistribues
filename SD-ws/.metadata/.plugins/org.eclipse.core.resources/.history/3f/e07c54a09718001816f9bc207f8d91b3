@@ -1,5 +1,0 @@
-import common.Message;
-
-public interface Observer {
-	public void update(Message message);
-}

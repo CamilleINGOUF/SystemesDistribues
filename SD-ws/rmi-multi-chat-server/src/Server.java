@@ -71,6 +71,7 @@ public class Server implements ServerInterface{
 	public void remove(ClientInterface client) throws RemoteException 
 	{
 		clients.remove(client);
+		sendMessageToAll(new Message("SERVER", null, client.giveYourName()+" disconnected."));
 		updateClientList();
 	}
 
