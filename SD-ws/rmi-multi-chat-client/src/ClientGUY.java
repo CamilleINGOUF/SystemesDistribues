@@ -1,4 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
@@ -8,15 +11,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
 
 import common.Message;
 
@@ -30,6 +40,7 @@ public class ClientGUY extends JFrame implements Observer
 	private Client client;
 
 	private JTextArea display;
+	private JTextPane pane;
 	private JTextField text;
 	private JList<String> group;
 
@@ -40,7 +51,7 @@ public class ClientGUY extends JFrame implements Observer
 	{
 
 		name = JOptionPane.showInputDialog(this,"What's your name ?");
-
+		Color color = JColorChooser.showDialog(null, "Give me a color", Color.BLACK);
 		if(name == null)
 			System.exit(0);
 
@@ -50,8 +61,9 @@ public class ClientGUY extends JFrame implements Observer
 		selectImage();
 
 		BuildUI();
-		client = new Client(name,this,image);
-
+		client = new Client(name,this);
+		client.color = color;
+		
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -94,14 +106,19 @@ public class ClientGUY extends JFrame implements Observer
 		display.setEditable(false);
 		display.setLineWrap(true);
 		JScrollPane scroll = new JScrollPane(display);
-		add(scroll, BorderLayout.CENTER);
+		//add(scroll, BorderLayout.CENTER);
+		//getContentPane().add(scroll, BorderLayout.CENTER);
+		
+		pane = new JTextPane();
+		//pane.setEditable(false);
+		scroll = new JScrollPane(pane);
+		//add(scroll, BorderLayout.CENTER);
 		getContentPane().add(scroll, BorderLayout.CENTER);
 
 		group = new JList<>();
-		group.setPrototypeCellValue("Greg is ze Best !");
+		group.setPrototypeCellValue("YOOOOOOOOOOOOO");
 		scroll = new JScrollPane(group);
-		add(scroll, BorderLayout.EAST);
-
+		getContentPane().add(scroll, BorderLayout.EAST);
 		addListeners();
 	}
 
@@ -113,7 +130,7 @@ public class ClientGUY extends JFrame implements Observer
 					if(!text.getText().equals(""))
 					{
 						ArrayList<String> tos = new ArrayList<>(group.getSelectedValuesList());
-						Message message = new Message(name, tos, text.getText());
+						Message message = new Message(name, tos, text.getText(),client.color);
 						client.sendMessage(message);
 					}
 					text.setText("");
@@ -127,6 +144,18 @@ public class ClientGUY extends JFrame implements Observer
 				closeWindow();
 			}
 		});
+		
+		pane.addFocusListener(new FocusListener() {
+			@Override
+			public void focusGained(FocusEvent e) {
+	            pane.setEditable(false);				
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+	            pane.setEditable(true);
+			}
+	    });
 	}
 
 	private void closeWindow() 
@@ -149,6 +178,27 @@ public class ClientGUY extends JFrame implements Observer
 		else
 		{
 			display.append(date.getHours()+":"+date.getMinutes()+" "+message.from+" to "+message.to+" => "+message.message+"\n");
+		}
+		printToPane(pane, message);
+	}
+	
+	public void printToPane(JTextPane tp, Message message)
+	{
+		StyleContext sc = StyleContext.getDefaultStyleContext();
+        AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, message.color);
+        
+        aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
+        aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
+        
+        Date date = message.date;
+        int len = tp.getDocument().getLength();
+        tp.setCaretPosition(len);
+        tp.setCharacterAttributes(aset, false);
+        if(message.isForAll())
+        	tp.replaceSelection(date.getHours()+":"+date.getMinutes()+" "+message.from+" => "+message.message+"\n");
+		else
+		{
+			tp.replaceSelection(date.getHours()+":"+date.getMinutes()+" "+message.from+" to "+message.to+" => "+message.message+"\n");
 		}
 	}
 

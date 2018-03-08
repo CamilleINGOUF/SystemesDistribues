@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -20,11 +21,14 @@ public class Client implements ClientInterface
 	
 	public ArrayList<Observer> obs;
 	
-	public Client(String name, ClientGUY clientGUY, ImageIcon image) 
+	public Color color;
+	
+	public Client(String name, ClientGUY clientGUY) 
 	{
 		this.name = name;
 		this.image = image;
 		obs = new ArrayList<>();
+		color = Color.black;
 		obs.add(clientGUY);
 		try {
 			stub = (ClientInterface) UnicastRemoteObject.exportObject(this, 0) ;
