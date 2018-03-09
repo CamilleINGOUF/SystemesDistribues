@@ -21,3 +21,4 @@
 >>>>>>> master
 2018-03-08 19:05:59,989 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 >>>>>>> 0f1cb782e0e89a6e2f05e06d9b14e5444a471a85
+2018-03-09 11:11:22,364 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.

@@ -1,7 +1,9 @@
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Image;
 import java.rmi.RemoteException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
@@ -25,16 +27,23 @@ public class ClientCellRenderer extends JLabel implements ListCellRenderer<Clien
 	{
 		try {
 			setText(value.giveYourName());
+			Image image = value.getYourAvatar().getImage(); // transform it 
+			Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+			ImageIcon img = new ImageIcon(newimg);
+			setIcon(img);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		
 		if (isSelected) {
 			setBackground(HIGHLIGHT_COLOR);
-			setForeground(Color.white);
+			setForeground(Color.WHITE);
 		} else {
-			setBackground(Color.white);
-			setForeground(Color.black);
+			setBackground(Color.white);try {
+				setForeground(value.giveColor());
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
 		}
 		return this;
 	}

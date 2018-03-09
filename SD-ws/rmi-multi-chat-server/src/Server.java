@@ -5,7 +5,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import common.ClientInterface;
-import common.ClientList;
 import common.Message;
 import common.ServerInterface;
 

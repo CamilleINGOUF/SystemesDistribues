@@ -41,10 +41,8 @@ public class ClientGUY extends JFrame implements Observer
 
 	private Client client;
 
-	private JTextArea display;
 	private JTextPane pane;
 	private JTextField text;
-	private JList<String> group;
 	private JList<ClientInterface> group2;
 
 	private String name;
@@ -64,7 +62,7 @@ public class ClientGUY extends JFrame implements Observer
 		selectImage();
 
 		BuildUI();
-		client = new Client(name,this);
+		client = new Client(name,this, image);
 		client.color = color;
 		
 		setSize(800, 600);
@@ -104,13 +102,7 @@ public class ClientGUY extends JFrame implements Observer
 		text = new JTextField();
 		getContentPane().add(text, BorderLayout.SOUTH);
 		text.grabFocus();
-
-		display = new JTextArea();
-		display.setEditable(false);
-		display.setLineWrap(true);
-		JScrollPane scroll = new JScrollPane(display);
-		//add(scroll, BorderLayout.CENTER);
-		//getContentPane().add(scroll, BorderLayout.CENTER);
+		JScrollPane scroll;
 		
 		pane = new JTextPane();
 		pane.setEditable(false);
@@ -165,16 +157,6 @@ public class ClientGUY extends JFrame implements Observer
 	@Override
 	public void update(Message message) throws RemoteException 
 	{
-		Date date = message.date;
-		if(message.isForAll())
-			display.append(date.getHours()+":"+date.getMinutes()+" "+message.froms.giveYourName()+" => "+message.message+"\n");
-		else
-		{
-			ArrayList<String> names= new ArrayList<>();
-			for(ClientInterface cliI : message.tos)
-				names.add(cliI.giveYourName());
-			display.append(date.getHours()+":"+date.getMinutes()+" "+message.froms.giveYourName()+" to "+names+" => "+message.message+"\n");
-		}
 		try {
 			printToPane(pane, message);
 		} catch (BadLocationException e) {
@@ -229,7 +211,6 @@ public class ClientGUY extends JFrame implements Observer
         try {
 			pane.getDocument().insertString(len, date.getHours()+":"+date.getMinutes()+" SERVER  => "+message+"\n", aset);
 		} catch (BadLocationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

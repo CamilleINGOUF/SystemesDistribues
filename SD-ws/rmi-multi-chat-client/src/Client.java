@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 import common.ClientInterface;
-import common.ClientList;
 import common.Message;
 import common.ServerInterface;
 
@@ -23,7 +22,7 @@ public class Client implements ClientInterface
 
 	public Color color;
 
-	public Client(String name, ClientGUY clientGUY) 
+	public Client(String name, ClientGUY clientGUY, ImageIcon image) 
 	{
 		this.name = name;
 		this.image = image;
@@ -109,5 +108,10 @@ public class Client implements ClientInterface
 
 	public ImageIcon getYourAvatar() throws RemoteException {
 		return image;
+	}
+
+	@Override
+	public Color giveColor() {
+		return color;
 	}
 }
