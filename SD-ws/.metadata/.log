@@ -853,6 +853,621 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+<<<<<<< HEAD
+!SESSION 2018-02-23 16:46:51.985 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-02-23 16:47:34.345
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-02-23 16:47:34.457
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-02-23 16:47:34.457
+!MESSAGE Could not read metadata for 'sockets-chat-tcp'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'sockets-chat-tcp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:901)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:904)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:884)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:735)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1587)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2399)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2156)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:467)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:328)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:368)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:442)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2018-02-23 16:47:34.480
+!MESSAGE The project description file (.project) for 'sockets-chat-tcp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-02-23 16:47:50.370
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\camille'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-02-23 16:47:50.454
+!MESSAGE Removing part descriptor with the 'net.sourceforge.pmd.eclipse.ui.views.violationOutline' id and the 'Alertes PMD' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-02-23 16:47:51.154
+!MESSAGE Removing part descriptor with the 'net.sourceforge.pmd.eclipse.ui.views.violationOverview' id and the 'Synthèse des alertes PMD' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-02-23 16:47:51.323
+!MESSAGE Removing part descriptor with the 'net.sourceforge.pmd.eclipse.ui.views.dataflowView' id and the 'Flots de données' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-02-23 16:47:51.362
+!MESSAGE Removing part descriptor with the 'net.sourceforge.pmd.eclipse.ui.views.br.CPDView2' id and the 'Vue CPD' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-02-23 16:47:51.371
+!MESSAGE Removing part descriptor with the 'net.sourceforge.pmd.eclipse.plugin.astView' id and the 'XPath Designer' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-02-23 16:51:04.425
+!MESSAGE The project description file (.project) for 'sockets-chat-tcp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:53:57.610
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:55:39.055
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:55:51.167
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:56:04.228
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:56:31.425
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:56:39.451
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:56:41.363
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:56:53.825
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 16:57:15.963
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:03:57.433
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:04:42.012
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:04:46.400
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:18:49.605
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:19:13.530
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:19:55.802
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.coordinates.rcp 4 10 2018-02-23 17:20:04.060
+!MESSAGE Suggesting project coordinate for ‘DependencyInfo{C:\Program Files\Java\jre1.8.0_161, JRE, {EXECUTION_ENVIRONMENT=JavaSE-1.8}}’ failed.
+!STACK 0
+java.lang.IllegalStateException: Expected the service to be RUNNING, but the service has FAILED
+	at com.google.common.util.concurrent.AbstractService.checkCurrentState(AbstractService.java:334)
+	at com.google.common.util.concurrent.AbstractService.awaitRunning(AbstractService.java:277)
+	at com.google.common.util.concurrent.AbstractIdleService.awaitRunning(AbstractIdleService.java:177)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.suggest(EclipseProjectCoordinateAdvisorService.java:136)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:189)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:130)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.resolve(ProjectCoordinateProvider.java:104)
+	at org.eclipse.recommenders.internal.models.rcp.ProjectCoordinateProvider.toUniqueName(ProjectCoordinateProvider.java:199)
+	at org.eclipse.recommenders.internal.models.rcp.PrefetchModelArchiveJob.run(PrefetchModelArchiveJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.IllegalArgumentException: assertion failed.
+	at org.eclipse.recommenders.utils.Throws.throwIllegalArgumentException(Throws.java:29)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:254)
+	at org.eclipse.recommenders.utils.Checks.ensureIsTrue(Checks.java:249)
+	at org.eclipse.recommenders.coordinates.DependencyInfo.<init>(DependencyInfo.java:52)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:57)
+	at org.eclipse.recommenders.internal.coordinates.rcp.DependencyInfoJsonTypeAdapter.deserialize(DependencyInfoJsonTypeAdapter.java:1)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:41)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:173)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.startUp(EclipseProjectCoordinateAdvisorService.java:172)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+=======
 !SESSION 2018-03-05 10:03:54.182 -----------------------------------------------
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_131
@@ -1207,6 +1822,7 @@ Caused by: java.net.SocketTimeoutException: connect timed out
 	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:254)
 	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.downloadVersionInformation(PublishedGradleVersions.java:172)
 	... 4 more
+<<<<<<< HEAD
 !SESSION 2018-03-09 09:10:22.093 -----------------------------------------------
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_131
@@ -1325,3 +1941,234 @@ java.lang.IllegalArgumentException: Argument cannot be null
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+=======
+>>>>>>> master
+!SESSION 2018-03-08 19:05:35.795 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-03-08 19:05:43.937
+!MESSAGE Unable to load resource file:/C:/Projects/ulco/M1/SystemesDistribues/SD-ws/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/C:/Projects/ulco/M1/SystemesDistribues/SD-ws/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/Projects/ulco/M1/SystemesDistribues/SD-ws/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 1; columnNumber: 2; Le balisage du document précédant l'élément racine doit avoir un format correct.
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:286)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:262)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:169)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:378)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:253)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:614)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/C:/Projects/ulco/M1/SystemesDistribues/SD-ws/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/Projects/ulco/M1/SystemesDistribues/SD-ws/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 1; columnNumber: 2; Le balisage du document précédant l'élément racine doit avoir un format correct.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:261)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1297)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	... 23 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-03-08 19:05:43.951
+!MESSAGE The persisted application model has no top-level window. Reinitializing with the default application model.
+!STACK 0
+java.lang.Exception
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:174)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:378)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:253)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:614)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-03-08 19:06:00.994
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\camille'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2018-03-08 19:06:01.517
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.jdt.internal.ui.JavaUIException: Problems reading information from XML 'OpenTypeHistory.xml'
+	at org.eclipse.jdt.internal.corext.util.History.createException(History.java:74)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:263)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:171)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.<init>(OpenTypeHistory.java:200)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.getInstance(OpenTypeHistory.java:186)
+	at org.eclipse.jdt.internal.ui.JavaPlugin.initializeAfterLoad(JavaPlugin.java:420)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:37)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 2; Le balisage du document précédant l'élément racine doit avoir un format correct.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:261)
+	... 6 more
+!SUBENTRY 1 org.eclipse.jdt.ui 4 4 2018-03-08 19:06:01.518
+!MESSAGE Problems reading information from XML 'OpenTypeHistory.xml'
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 2; Le balisage du document précédant l'élément racine doit avoir un format correct.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:261)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:171)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.<init>(OpenTypeHistory.java:200)
+	at org.eclipse.jdt.internal.corext.util.OpenTypeHistory.getInstance(OpenTypeHistory.java:186)
+	at org.eclipse.jdt.internal.ui.JavaPlugin.initializeAfterLoad(JavaPlugin.java:420)
+	at org.eclipse.jdt.internal.ui.InitializeAfterLoadJob$RealJob.run(InitializeAfterLoadJob.java:37)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2018-03-08 19:09:33.506
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.jdt.internal.ui.JavaUIException: Problems reading information from XML 'QualifiedTypeNameHistory.xml'
+	at org.eclipse.jdt.internal.corext.util.History.createException(History.java:74)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:263)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:171)
+	at org.eclipse.jdt.internal.corext.util.QualifiedTypeNameHistory.<init>(QualifiedTypeNameHistory.java:33)
+	at org.eclipse.jdt.internal.corext.util.QualifiedTypeNameHistory.getDefault(QualifiedTypeNameHistory.java:26)
+	at org.eclipse.jdt.internal.ui.JavaPlugin.stop(JavaPlugin.java:511)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:828)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:947)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1675)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1594)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 2; Le balisage du document précédant l'élément racine doit avoir un format correct.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:261)
+	... 21 more
+!SUBENTRY 1 org.eclipse.jdt.ui 4 4 2018-03-08 19:09:33.506
+!MESSAGE Problems reading information from XML 'QualifiedTypeNameHistory.xml'
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 2; Le balisage du document précédant l'élément racine doit avoir un format correct.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:261)
+	at org.eclipse.jdt.internal.corext.util.History.load(History.java:171)
+	at org.eclipse.jdt.internal.corext.util.QualifiedTypeNameHistory.<init>(QualifiedTypeNameHistory.java:33)
+	at org.eclipse.jdt.internal.corext.util.QualifiedTypeNameHistory.getDefault(QualifiedTypeNameHistory.java:26)
+	at org.eclipse.jdt.internal.ui.JavaPlugin.stop(JavaPlugin.java:511)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:828)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:947)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1675)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1594)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+>>>>>>> 0f1cb782e0e89a6e2f05e06d9b14e5444a471a85

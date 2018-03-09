@@ -4,6 +4,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 import common.ClientInterface;
 import common.ClientList;
 import common.Message;
@@ -16,6 +18,7 @@ public class Client implements ClientInterface
 
 	private String name;
 
+	private ImageIcon image;
 	public ArrayList<Observer> obs;
 
 	public Color color;
@@ -23,6 +26,7 @@ public class Client implements ClientInterface
 	public Client(String name, ClientGUY clientGUY) 
 	{
 		this.name = name;
+		this.image = image;
 		obs = new ArrayList<>();
 		color = Color.black;
 		obs.add(clientGUY);
@@ -89,6 +93,7 @@ public class Client implements ClientInterface
 	}
 
 	@Override
+	
 	public void printClients(ArrayList<ClientInterface> clients) throws RemoteException 
 	{
 		for(Observer o : obs)
@@ -100,5 +105,9 @@ public class Client implements ClientInterface
 	{
 		for(Observer o : obs)
 			o.update(message);
+	}
+
+	public ImageIcon getYourAvatar() throws RemoteException {
+		return image;
 	}
 }
