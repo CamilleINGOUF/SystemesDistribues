@@ -1,0 +1,6 @@
+import javax.swing.JLabel;
+import javax.swing.ListCellRenderer;
+
+public class ClientCellRenderer extends JLabel implements ListCellRenderer<E> {
+
+}

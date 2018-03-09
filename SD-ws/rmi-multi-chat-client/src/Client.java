@@ -13,13 +13,13 @@ public class Client implements ClientInterface
 {
 	public ClientInterface stub;
 	public ServerInterface serv;
-	
+
 	private String name;
-	
+
 	public ArrayList<Observer> obs;
-	
+
 	public Color color;
-	
+
 	public Client(String name, ClientGUY clientGUY) 
 	{
 		this.name = name;
@@ -40,13 +40,17 @@ public class Client implements ClientInterface
 	{
 		notifyObservers(message);
 	}
-	
+
 	private void notifyObservers(Message message)
 	{
-		for(Observer o : obs)
-			o.update(message);
+		try {
+			for(Observer o : obs)
+				o.update(message);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	public void sendMessage(Message message)
 	{
 		try 
@@ -69,17 +73,10 @@ public class Client implements ClientInterface
 	{
 		return name;
 	}
-	
+
 	public void registerObserver(Observer o)
 	{
 		obs.add(o);
-	}
-
-	@Override
-	public void printClients(ClientList clients) throws RemoteException 
-	{
-		for(Observer o : obs)
-			o.update(clients.clients);
 	}
 
 	public void shutdown() 
@@ -89,5 +86,19 @@ public class Client implements ClientInterface
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void printClients(ArrayList<ClientInterface> clients) throws RemoteException 
+	{
+		for(Observer o : obs)
+			o.update(clients);
+	}
+
+	@Override
+	public void ServerMessage(String message) throws RemoteException 
+	{
+		for(Observer o : obs)
+			o.update(message);
 	}
 }

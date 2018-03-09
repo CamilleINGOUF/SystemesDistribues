@@ -12,12 +12,14 @@ public class Message implements Common
 	private static final long serialVersionUID = 1L;
 	public String from;
 	public ArrayList<String> to;
+	public ArrayList<ClientInterface> tos;
 	
 	public String message;
 	
 	public Date date;
 	
 	public Color color;
+	public ClientInterface froms;
 	
 	public Message(String from, ArrayList<String> to, String message) 
 	{
@@ -28,10 +30,10 @@ public class Message implements Common
 		color = Color.black;
 	}
 	
-	public Message(String from, ArrayList<String> to, String message,Color color) 
+	public Message(ClientInterface from, ArrayList<ClientInterface> to, String message,Color color) 
 	{
-		this.from = from;
-		this.to = to;
+		this.froms = from;
+		this.tos = to;
 		date = new Date();
 		this.message = message;
 		this.color = color;
@@ -39,6 +41,6 @@ public class Message implements Common
 	
 	public boolean isForAll()
 	{
-		return to == null || to.isEmpty();
+		return tos == null || tos.isEmpty();
 	}
 }

@@ -1,0 +1,24 @@
+import java.awt.Component;
+import java.rmi.RemoteException;
+
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.ListCellRenderer;
+
+import common.ClientInterface;
+
+public class ClientCellRenderer extends JLabel implements ListCellRenderer<ClientInterface> {
+
+	@Override
+	public Component getListCellRendererComponent(JList<? extends ClientInterface> list, ClientInterface value, int index, boolean isSelected,
+			boolean cellHasFocus) 
+	{
+		try {
+			setText(value.giveYourName());
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return this;
+	}
+
+}

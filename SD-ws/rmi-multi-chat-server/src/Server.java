@@ -40,16 +40,9 @@ public class Server implements ServerInterface{
 	private void updateClientList()
 	{
 		try {
-			ArrayList<String> names = new ArrayList<>();
-			
-			for(ClientInterface c : clients)
-				names.add(c.giveYourName());
-			
-			ClientList list = new ClientList(names);
-			
 			for(ClientInterface cli : clients)
 			{
-				cli.printClients(list);
+				cli.printClients(clients);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,7 +64,8 @@ public class Server implements ServerInterface{
 	public void remove(ClientInterface client) throws RemoteException 
 	{
 		clients.remove(client);
-		sendMessageToAll(new Message("SERVER", null, client.giveYourName()+" disconnected."));
+		for(ClientInterface cliI : clients)
+			cliI.ServerMessage(client.giveYourName()+" disconnected.");
 		updateClientList();
 	}
 
@@ -82,8 +76,11 @@ public class Server implements ServerInterface{
 			return;
 		for(ClientInterface client : clients)
 		{
-			if(message.to.contains(client.giveYourName()) || message.from.equals(client.giveYourName()))
+			
+			if(message.tos.contains(client) || message.froms.equals(client))
+			{
 				client.printMessage(message);
+			}
 		}
 	}
 

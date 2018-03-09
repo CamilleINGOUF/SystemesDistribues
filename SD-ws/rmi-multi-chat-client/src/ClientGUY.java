@@ -1,11 +1,11 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import java.awt.Dimension;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,10 +18,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
+import common.ClientInterface;
 import common.Message;
 
 public class ClientGUY extends JFrame implements Observer
@@ -37,6 +39,7 @@ public class ClientGUY extends JFrame implements Observer
 	private JTextPane pane;
 	private JTextField text;
 	private JList<String> group;
+	private JList<ClientInterface> group2;
 	
 	private String name;
 	
@@ -80,14 +83,16 @@ public class ClientGUY extends JFrame implements Observer
 		//getContentPane().add(scroll, BorderLayout.CENTER);
 		
 		pane = new JTextPane();
+		pane.setEditable(false);
 		//pane.setEditable(false);
 		scroll = new JScrollPane(pane);
 		//add(scroll, BorderLayout.CENTER);
 		getContentPane().add(scroll, BorderLayout.CENTER);
 		
-		group = new JList<>();
-		group.setPrototypeCellValue("YOOOOOOOOOOOOO");
-		scroll = new JScrollPane(group);
+		group2 = new JList<>();
+		group2.setCellRenderer(new ClientCellRenderer());
+		scroll = new JScrollPane(group2);
+		scroll.setPreferredSize(new Dimension(200, 1000));
 		getContentPane().add(scroll, BorderLayout.EAST);
 		
 		addListeners();
@@ -100,8 +105,8 @@ public class ClientGUY extends JFrame implements Observer
 				{
 					if(!text.getText().equals(""))
 					{
-						ArrayList<String> tos = new ArrayList<>(group.getSelectedValuesList());
-						Message message = new Message(name, tos, text.getText(),client.color);
+						ArrayList<ClientInterface> tos = new ArrayList<>(group2.getSelectedValuesList());
+						Message message = new Message(client, tos, text.getText(),client.color);
 						client.sendMessage(message);
 					}
 					text.setText("");
@@ -115,18 +120,6 @@ public class ClientGUY extends JFrame implements Observer
 				closeWindow();
 			}
 		});
-		
-		pane.addFocusListener(new FocusListener() {
-			@Override
-			public void focusGained(FocusEvent e) {
-	            pane.setEditable(false);				
-			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-	            pane.setEditable(true);
-			}
-	    });
 	}
 
 	private void closeWindow() 
@@ -141,19 +134,26 @@ public class ClientGUY extends JFrame implements Observer
 	}
 
 	@Override
-	public void update(Message message) 
+	public void update(Message message) throws RemoteException 
 	{
 		Date date = message.date;
 		if(message.isForAll())
-			display.append(date.getHours()+":"+date.getMinutes()+" "+message.from+" => "+message.message+"\n");
+			display.append(date.getHours()+":"+date.getMinutes()+" "+message.froms.giveYourName()+" => "+message.message+"\n");
 		else
 		{
-			display.append(date.getHours()+":"+date.getMinutes()+" "+message.from+" to "+message.to+" => "+message.message+"\n");
+			ArrayList<String> names= new ArrayList<>();
+			for(ClientInterface cliI : message.tos)
+				names.add(cliI.giveYourName());
+			display.append(date.getHours()+":"+date.getMinutes()+" "+message.froms.giveYourName()+" to "+names+" => "+message.message+"\n");
 		}
-		printToPane(pane, message);
+		try {
+			printToPane(pane, message);
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public void printToPane(JTextPane tp, Message message)
+	public void printToPane(JTextPane tp, Message message) throws BadLocationException, RemoteException
 	{
 		StyleContext sc = StyleContext.getDefaultStyleContext();
         AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, message.color);
@@ -166,18 +166,42 @@ public class ClientGUY extends JFrame implements Observer
         tp.setCaretPosition(len);
         tp.setCharacterAttributes(aset, false);
         if(message.isForAll())
-        	tp.replaceSelection(date.getHours()+":"+date.getMinutes()+" "+message.from+" => "+message.message+"\n");
+        	tp.getDocument().insertString(len, date.getHours()+":"+date.getMinutes()+" "+message.froms.giveYourName()+" => "+message.message+"\n", aset);
 		else
 		{
-			tp.replaceSelection(date.getHours()+":"+date.getMinutes()+" "+message.from+" to "+message.to+" => "+message.message+"\n");
+			ArrayList<String> names= new ArrayList<>();
+			for(ClientInterface cliI : message.tos)
+				names.add(cliI.giveYourName());
+			tp.getDocument().insertString(len, date.getHours()+":"+date.getMinutes()+" "+message.froms.giveYourName()+" to "+names+" => "+message.message+"\n", aset);
 		}
 	}
 
 	@Override
-	public void update(ArrayList<String> clients) 
+	public void update(ArrayList<ClientInterface> clients)
 	{
-		System.out.println(clients);
-		String[] str = new String[clients.size()];
-		group.setListData(clients.toArray(str));
+		ClientInterface[] str = new ClientInterface[clients.size()];
+		group2.setListData(clients.toArray(str));
+		repaint();
+	}
+
+	@Override
+	public void update(String message) 
+	{
+		StyleContext sc = StyleContext.getDefaultStyleContext();
+        AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, Color.black);
+        
+        aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
+        aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
+        Date date = new Date();
+        int len = pane.getDocument().getLength();
+        pane.setCaretPosition(len);
+        pane.setCharacterAttributes(aset, false);
+        
+        try {
+			pane.getDocument().insertString(len, date.getHours()+":"+date.getMinutes()+" SERVER  => "+message+"\n", aset);
+		} catch (BadLocationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
