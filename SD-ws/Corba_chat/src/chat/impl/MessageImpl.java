@@ -1,0 +1,52 @@
+package chat.impl;
+
+import java.awt.Color;
+import java.util.ArrayList;
+
+import org.omg.CORBA.Any;
+
+import chat.ChatClient;
+import chat.MessagePOA;
+
+public class MessageImpl extends MessagePOA {
+
+	private String message;
+	private ChatClient sender;
+	private ArrayList<ChatClient> targets;
+	
+	private Color color;
+	
+	public MessageImpl(String message, ChatClient sender, ArrayList<ChatClient> targets, Color color) 
+	{
+		this.message = message;
+		this.sender = sender;
+		this.targets = targets;
+		this.color = color;
+	}
+	
+	@Override
+	public ChatClient getSender() {
+		return sender;
+	}
+
+	@Override
+	public boolean isForAll() {
+		return targets.isEmpty();
+	}
+
+	@Override
+	public ChatClient[] getTargets() {
+		ChatClient[] cls = new ChatClient[targets.size()];
+		return targets.toArray(cls);
+	}
+
+	@Override
+	public String getMessage() {
+		return message;
+	}
+
+	@Override
+	public chat.Color getColor() {
+		return null;
+	}
+}

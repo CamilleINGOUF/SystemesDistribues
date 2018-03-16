@@ -1,0 +1,35 @@
+package chat.impl;
+
+import java.util.ArrayList;
+
+import chat.ChatClient;
+import chat.ChatServerPOA;
+
+public class Server extends ChatServerPOA {
+
+	private ArrayList<ChatClient> clients;
+	
+	public Server() 
+	{
+		try{
+		clients = new ArrayList<>();
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void register(ChatClient client) 
+	{
+		clients.add(client);
+	}
+
+	@Override
+	public void remove(ChatClient client) 
+	{
+		clients.remove(client);
+	}
+
+}

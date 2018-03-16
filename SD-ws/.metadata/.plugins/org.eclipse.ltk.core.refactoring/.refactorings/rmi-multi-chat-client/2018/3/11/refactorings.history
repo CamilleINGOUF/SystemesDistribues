@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;Corba_chat/src/chat.impl&apos;&#x0A;- Original project: &apos;rmi-multi-chat-client&apos;&#x0A;- Destination element: &apos;Corba_chat/src/chat.impl&apos;&#x0A;- Original elements:&#x0A;     ClientCellRenderer.java&#x0A;     ClientGUY.java&#x0A;     Observer.java" description="Copy compilation units" destination="=Corba_chat/src&lt;chat.impl" element1="/src&lt;{ClientCellRenderer.java" element2="/src&lt;{ClientGUY.java" element3="/src&lt;{Observer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1521209101244" units="3" version="1.0"/>
+</session>

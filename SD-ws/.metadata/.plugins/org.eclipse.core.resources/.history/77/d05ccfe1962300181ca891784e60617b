@@ -1,8 +1,0 @@
-module accumulator {
-
-	interface Accumulator
-	{
-		void add(in long number);
-	};
-
-};

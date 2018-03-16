@@ -1,0 +1,20 @@
+module chat{
+ 	interface ChatServer{
+ 		void register(in ChatClient client);
+ 		void remove(in ChatClient client);
+ 	};
+
+	interface Message{
+		boolean isForAll();
+		ChatClient getSender();
+		
+		typedef sequence<ChatClient> clients;
+		clients getTargets();
+	};
+
+ 	interface ChatClient{
+ 		string getName();
+ 		void updateClientList();
+ 		void printMessage(Message message);
+ 	};
+};

@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+import chat.ChatClient;
+import chat.MessagePOA;
+
+public class Message extends MessagePOA {
+
+	private String message;
+	private ChatClient send;
+	private ArrayList<ChatClient> targets;
+	
+	@Override
+	public ChatClient getSender() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isForAll() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ChatClient[] getTargets() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

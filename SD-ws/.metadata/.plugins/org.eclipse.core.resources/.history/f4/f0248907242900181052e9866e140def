@@ -1,0 +1,13 @@
+package chat.impl;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+
+import chat.ChatClient;
+import chat.Message;
+
+public interface Observer 
+{
+	public void update(Message message);
+	public void update(String message);
+	void update(ArrayList<ChatClient> clients);
+}

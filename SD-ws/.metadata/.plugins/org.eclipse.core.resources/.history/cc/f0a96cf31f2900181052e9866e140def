@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+import chat.ChatClient;
+import chat.MessagePOA;
+
+public class Message extends MessagePOA {
+
+	private String message;
+	private ChatClient sender;
+	private ArrayList<ChatClient> targets;
+	
+	public Message(String message, ChatClient sender, ArrayList<ChatClient> targets) 
+	{
+		this.message = message;
+		this.sender = sender;
+		this.targets = targets;
+	}
+	
+	@Override
+	public ChatClient getSender() {
+		return sender;
+	}
+
+	@Override
+	public boolean isForAll() {
+		return targets.isEmpty();
+	}
+
+	@Override
+	public ChatClient[] getTargets() {
+		ChatClient[] cls = new ChatClient[];
+		return null;
+	}
+
+}

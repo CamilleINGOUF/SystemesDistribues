@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=Corba_tuto/src&lt;accumulator{AccumulatorPOA.java[AccumulatorPOA" modifiers="1025" timestamp="1520599937000"/>
-<typeInfo handle="=Corba_tuto2/src&lt;universite{EtudiantPOA.java[EtudiantPOA" modifiers="1025" timestamp="1520605413000"/>
-<typeInfo handle="=Corba_tuto2/src&lt;universite{FacPOA.java[FacPOA" modifiers="1025" timestamp="1520605413000"/>
+<typeInfo handle="=Corba_callback/src&lt;callbacks{CallbackClientPOA.java[CallbackClientPOA" modifiers="1025" timestamp="1521195759000"/>
+<typeInfo handle="=Corba_chat/src&lt;chat{ChatServerPOA.java[ChatServerPOA" modifiers="1025" timestamp="1521211798000"/>
+<typeInfo handle="=Corba_chat/src&lt;chat{ChatClientPOA.java[ChatClientPOA" modifiers="1025" timestamp="1521211798000"/>
+<typeInfo handle="=Corba_chat/src&lt;chat{MessagePOA.java[MessagePOA" modifiers="1025" timestamp="1521211798000"/>
 </typeInfoHistroy>

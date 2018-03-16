@@ -1,0 +1,20 @@
+package chat.impl;
+
+import chat.ChatClient;
+import chat.ChatServerPOA;
+
+public class Server extends ChatServerPOA {
+
+	@Override
+	public void register(ChatClient client) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(ChatClient client) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
