@@ -1,0 +1,11 @@
+module universite {
+
+	interface Personne {
+		attribute string nom;		
+	};
+	
+	interface Etudiant : Personne 
+	{
+		
+	}
+};

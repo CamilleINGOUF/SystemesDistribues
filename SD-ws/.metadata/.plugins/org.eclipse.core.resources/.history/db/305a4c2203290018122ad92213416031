@@ -1,0 +1,9 @@
+module callbacks {
+	interface CallBackClient;
+	
+	interface CallBackClient(){
+		void sayHello();
+		void register(in CallbackClient client);
+		
+	}
+}

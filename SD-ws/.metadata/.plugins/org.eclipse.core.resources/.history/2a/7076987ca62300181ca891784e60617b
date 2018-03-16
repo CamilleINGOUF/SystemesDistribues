@@ -1,0 +1,55 @@
+package universite.application;
+
+import org.omg.CORBA.ORB;
+import org.omg.PortableServer.POA;
+import org.omg.PortableServer.POAHelper;
+
+import universite.Etudiant;
+import universite.FacPOA;
+
+public class FacImpl extends FacPOA {
+
+	private int nbEtudiants = 0;
+	
+	ORB orb = ORB.init(args, null);
+	POA rootPOA = POAHelper.narrow(orb.resolve_initial_references("RootPOA"));
+	
+	@Override
+	public Etudiant ajouterEtudiant(String nom) {
+		Etudiant etuRef = null;
+		
+		EtudientImpl etu = new EtudientImpl();
+		etu.nom(nom);
+		int num = ++nbEtudiants;
+		etu.numCarte(num);
+		org.omg.CORBA.Object ref;
+		try 
+		{
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Etudiant recupererEtudiant(int numCarte) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void retirerEtudiant(int numCarte) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Etudiant[] listerEtudiants() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

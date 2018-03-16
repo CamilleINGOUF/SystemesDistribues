@@ -1,0 +1,43 @@
+package universite.application;
+
+public class ClientUniversite {
+	private void mai() {
+		ORB orb = ORB.init(args, null) ;
+		16
+		17 BufferedReader br = new BufferedReader(new FileReader("ior.txt")) ;
+		18 String ior = br.readLine() ;
+		19 br.close() ;
+		20
+		21 org.omg.CORBA.Object o = orb.string_to_object(ior) ;
+		22
+		23 Etudiant etudiant = EtudiantHelper.narrow(o) ;
+		24 etudiant.nom("Bill");
+		25 etudiant.ajouterNoteDans(18.5f, "Informatique");
+		26 etudiant.ajouterNoteDans(12f, "Mathematiques");
+		27 etudiant.ajouterNoteDans(17f, "Anglais");
+		28
+		29 System.out.println("Information sur " + etudiant.nom() + " : ");
+		30
+		31 System.out.print("Liste des matières passées : ");
+		32 String[] matieres = etudiant.listeMatieres() ;
+		33 for (String m : matieres){
+		34 System.out.print(m + " ");
+		35 }
+		36 System.out.println("");
+		37
+		38 System.out.print("Liste des notes : ");
+		39 float[] notes = etudiant.listeNotes() ;
+		40 for (float n : notes){
+		41 System.out.print(n + " ");
+		42 }
+		43 System.out.println("");
+		44
+		45 System.out.println("Liste des résultats : ");
+		46 Resultat[] resultats = etudiant.listeResultats() ;
+		47 for (Resultat r : resultats){
+		48 System.out.println(r.matiere + " : " + r.note);
+		49 }
+		50
+		51 System.out.println("Moyenne de " + etudiant.nom() + " : " + etudiant.moyenne());
+		52 }
+}

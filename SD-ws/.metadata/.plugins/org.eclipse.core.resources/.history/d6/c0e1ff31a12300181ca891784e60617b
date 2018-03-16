@@ -1,0 +1,10 @@
+package universite.application;
+
+public class ServerUniversite {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

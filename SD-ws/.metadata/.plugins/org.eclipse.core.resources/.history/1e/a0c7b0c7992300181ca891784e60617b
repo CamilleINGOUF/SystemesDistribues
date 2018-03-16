@@ -1,0 +1,12 @@
+package accumulator_impl;
+
+import org.omg.CORBA.ORB;
+
+public class AccumulatorServer 
+{
+	
+	public static void main(String[] args) 
+	{
+		ORB orb = ORB.init(args, null);
+	}
+}

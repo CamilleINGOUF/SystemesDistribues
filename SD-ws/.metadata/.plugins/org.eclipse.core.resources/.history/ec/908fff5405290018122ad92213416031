@@ -1,0 +1,17 @@
+package callbacks.impl;
+
+import callbacks.CallbackClientPOA;
+
+public class CallbackServerImpl extends CallbackClientPOA {
+
+	@Override
+	public String getName() {
+		return null;
+	}
+
+	@Override
+	public void showYourName() {
+
+	}
+
+}

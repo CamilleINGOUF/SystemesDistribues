@@ -1,0 +1,12 @@
+package accumulator_impl;
+
+import accumulator.AccumulatorPOA;
+
+public class AccumulatorImpl extends AccumulatorPOA 
+{
+	@Override
+	public void add(int number) 
+	{
+		
+	}
+}

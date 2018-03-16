@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=rmi-multi-chat-client/\/usr\/local\/jdk1.8.0_131\/jre\/lib\/rt.jar&lt;javax.swing(JFrame.class[JFrame" modifiers="33" timestamp="1489566767000"/>
-<typeInfo handle="=rmi-multi-chat-client/\/usr\/local\/jdk1.8.0_131\/jre\/lib\/rt.jar&lt;javax.swing(JLabel.class[JLabel" modifiers="33" timestamp="1489566767000"/>
-<typeInfo handle="=rmi-multi-chat-client/\/usr\/local\/jdk1.8.0_131\/jre\/lib\/rt.jar&lt;javax.swing(ListCellRenderer.class[ListCellRenderer" modifiers="1537" timestamp="1489566767000"/>
+<typeInfo handle="=Corba_tuto/src&lt;accumulator{AccumulatorPOA.java[AccumulatorPOA" modifiers="1025" timestamp="1520599937000"/>
+<typeInfo handle="=Corba_tuto2/src&lt;universite{EtudiantPOA.java[EtudiantPOA" modifiers="1025" timestamp="1520605413000"/>
+<typeInfo handle="=Corba_tuto2/src&lt;universite{FacPOA.java[FacPOA" modifiers="1025" timestamp="1520605413000"/>
 </typeInfoHistroy>

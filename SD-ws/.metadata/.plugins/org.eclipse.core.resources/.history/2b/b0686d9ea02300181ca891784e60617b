@@ -1,0 +1,56 @@
+package universite.application;
+
+import java.util.HashMap;
+
+import universite.EtudiantPOA;
+import universite.EtudiantPackage.Resultat;
+
+public class EtudientImpl extends EtudiantPOA {
+
+	private String nom = null ;
+	
+	private HashMap<String, Float> resultats = new HashMap<>() ;
+	
+	@Override
+	public void ajouterNoteDans(float note, String matiere) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String[] listeMatieres() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public float[] listeNotes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public float moyenne() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Resultat[] listeResultats() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String nom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void nom(String newNom) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

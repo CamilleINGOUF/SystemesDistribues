@@ -1,0 +1,13 @@
+module callbacks {
+	interface CallbackClient;
+	
+	interface CallbackClient(){
+		void sayHello();
+		void register(in CallbackClient client);
+	};
+	
+	interface CallbackClient(){
+		string getName();
+		void showYourName();
+	};
+};

@@ -1,0 +1,40 @@
+package callbacks.impl;
+
+import org.omg.CORBA.ORB;
+
+import callbacks.CallbackClientPOA;
+import callbacks.CallbackServer;
+
+public class CallbackClientImpl extends CallbackClientPOA{
+
+	private String name;
+	private CallbackServer server;
+	
+	private ORB orb;
+	
+	public CallbackClientImpl(String name, String[] args) 
+	{
+		this.name = name;
+		
+		orb = ORB.init(args, null);
+		Thread orbThread = new Thread(new Runnable() {
+			
+			@Override
+			public void run() 
+			{
+				
+			}
+		});
+	}
+	
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public void showYourName() {
+		
+	}
+
+}

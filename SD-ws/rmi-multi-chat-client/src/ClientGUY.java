@@ -106,9 +106,7 @@ public class ClientGUY extends JFrame implements Observer
 		
 		pane = new JTextPane();
 		pane.setEditable(false);
-		//pane.setEditable(false);
 		scroll = new JScrollPane(pane);
-		//add(scroll, BorderLayout.CENTER);
 		getContentPane().add(scroll, BorderLayout.CENTER);
 		
 		group2 = new JList<>();

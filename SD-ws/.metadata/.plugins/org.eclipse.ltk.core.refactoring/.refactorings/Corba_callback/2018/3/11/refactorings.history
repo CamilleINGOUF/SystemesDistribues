@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;callbacks.impl.CallbacksImpl&apos; to &apos;CallbackClientImpl&apos;&#x0A;- Original project: &apos;Corba_callback&apos;&#x0A;- Original element: &apos;callbacks.impl.CallbacksImpl&apos;&#x0A;- Renamed element: &apos;callbacks.impl.CallbackClientImpl&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CallbacksImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;callbacks.impl{CallbacksImpl.java[CallbacksImpl" matchStrategy="1" name="CallbackClientImpl" qualified="false" references="true" similarDeclarations="false" stamp="1521195847396" textual="false" version="1.0"/>
+</session>

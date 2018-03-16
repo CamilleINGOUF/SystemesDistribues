@@ -1,0 +1,10 @@
+package accumulator_impl;
+
+public class AccumulatorServer 
+{
+	
+	public static void main(String[] args) 
+	{
+		
+	}
+}

@@ -1,0 +1,43 @@
+package callbacks.impl;
+
+import java.util.ArrayList;
+
+import callbacks.CallbackClient;
+import callbacks.CallbackServerPOA;
+
+public class CallbackServerImpl extends CallbackServerPOA
+{
+	private ArrayList<CallbackClient> clients;
+	
+	public CallbackServerImpl(String[] args) 
+	{
+		try
+		{
+			clients = new ArrayList<>();
+		
+			
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void sayHello() 
+	{
+		System.out.println("Saying hello.");
+	}
+
+	@Override
+	public void register(CallbackClient client) 
+	{
+		clients.add(client);
+		System.out.println("Client registered.");
+	}
+	
+	public static void main(String[] args) 
+	{
+		
+	}
+}

@@ -1,0 +1,54 @@
+package universite.application;
+
+import java.util.HashMap;
+
+import universite.Etudiant;
+import universite.EtudiantHelper;
+import universite.FacPOA;
+
+public class FacImpl extends FacPOA {
+
+	private int nbEtudiants = 0;
+	private HashMap<numCarte, Etudiant> etudiants;
+	
+	@Override
+	public Etudiant ajouterEtudiant(String nom) {
+		Etudiant etuRef = null;
+		
+		EtudientImpl etu = new EtudientImpl();
+		etu.nom(nom);
+		int num = ++nbEtudiants;
+		etu.numCarte(num);
+		org.omg.CORBA.Object ref;
+		try 
+		{
+			ref = rootPOA.servant_to_reference(etu);
+			etuRef = EtudiantHelper.narrow(ref);
+			etu
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Etudiant recupererEtudiant(int numCarte) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void retirerEtudiant(int numCarte) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Etudiant[] listerEtudiants() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

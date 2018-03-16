@@ -1,0 +1,28 @@
+package callbacks.impl;
+
+import java.util.ArrayList;
+
+import callbacks.CallbackClient;
+import callbacks.CallbackServerPOA;
+
+public class CallbackServerImpl extends CallbackServerPOA
+{
+	private ArrayList<CallbackClient> clients;
+	
+	public CallbackServerImpl() 
+	{
+		
+	}
+	
+	@Override
+	public void sayHello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void register(CallbackClient client) 
+	{
+		
+	}
+}

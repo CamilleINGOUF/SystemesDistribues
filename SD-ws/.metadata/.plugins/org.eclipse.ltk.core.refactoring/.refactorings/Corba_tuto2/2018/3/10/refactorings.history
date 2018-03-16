@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;universite.application.facImpl&apos; to &apos;FacImpl&apos;&#x0A;- Original project: &apos;Corba_tuto2&apos;&#x0A;- Original element: &apos;universite.application.facImpl&apos;&#x0A;- Renamed element: &apos;universite.application.FacImpl&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;facImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;universite.application{facImpl.java[facImpl" matchStrategy="1" name="FacImpl" qualified="false" references="true" similarDeclarations="false" stamp="1520605624034" textual="false" version="1.0"/>
+</session>

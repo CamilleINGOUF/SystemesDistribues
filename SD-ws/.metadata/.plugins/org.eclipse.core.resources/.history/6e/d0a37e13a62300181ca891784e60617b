@@ -1,0 +1,32 @@
+package universite.application;
+
+import universite.Etudiant;
+import universite.FacPOA;
+
+public class FacImpl extends FacPOA {
+
+	@Override
+	public Etudiant ajouterEtudiant(String nom) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Etudiant recupererEtudiant(int numCarte) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void retirerEtudiant(int numCarte) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Etudiant[] listerEtudiants() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
