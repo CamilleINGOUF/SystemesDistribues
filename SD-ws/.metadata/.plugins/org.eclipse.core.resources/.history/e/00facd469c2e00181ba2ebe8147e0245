@@ -1,0 +1,37 @@
+package chat.impl;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class ChannelFrame extends JFrame
+{
+	String[] channels;
+	
+	JList<String> list;
+	
+	public ChannelFrame(String[] channels) 
+	{
+		this.channels = channels;
+		String name = JOptionPane.showInputDialog(null, getPanel(), "Channels", JOptionPane.OK_CANCEL_OPTION);
+		if(list.isSelectionEmpty())
+		{
+			
+		}
+		else
+		{
+			
+		}
+	}
+	
+	private JPanel getPanel()
+	{
+		JPanel panel = new JPanel(new BorderLayout());
+		list = new JList<>(channels);
+		panel.add(list,BorderLayout.CENTER);
+		return panel;
+	}
+}

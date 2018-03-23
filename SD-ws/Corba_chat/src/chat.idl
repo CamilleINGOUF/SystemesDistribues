@@ -2,18 +2,21 @@ module chat{
 
 	interface Message;
 
- 	interface ChatClient{
- 		string getName();
- 		typedef sequence<ChatClient> clients;
- 		void updateClientList(in clients clients);
- 		void printMessage(in Message message);
- 	};
- 	
  	interface Color
  	{
  		long getR();
  		long getG();
  		long getB();
+ 	};
+
+ 	interface ChatClient{
+ 		string getName();
+ 		typedef sequence<ChatClient> clients;
+ 		void updateClientList(in clients clients);
+ 		void printMessage(in Message message);
+		Color getColor();
+		void shutdown();
+		any getImage();
  	};
 
 	interface Message {
@@ -27,9 +30,16 @@ module chat{
 		Color getColor();
 	};
  	
+ 	interface ChatChannel{};
+ 	
  	interface ChatServer{
  		void register(in ChatClient client);
+ 		void registerChannel(in ChatClient client, in string channel);
  		void remove(in ChatClient client);
  		void sendMessage(in Message message);
+ 		void createChannel(in ChatClient client, in string name);
+ 		void joinChannel(in ChatClient client, in ChatChannel channel);
+ 		typedef sequence<string> channels;
+		channels getChannels(); 
  	};
 };

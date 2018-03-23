@@ -1,0 +1,9 @@
+package chat.impl;
+
+public class ChannelGUY 
+{
+	public ChannelGUY() 
+	{
+		
+	}
+}

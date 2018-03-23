@@ -1,0 +1,23 @@
+package chat.impl;
+
+import javax.swing.JFrame;
+
+public class ChannelFrame extends JFrame
+{
+	String[] channels;
+	
+	public ChannelFrame(String[] channels) 
+	{
+		this.channels = channels;
+	}
+	
+	public String run()
+	{
+		setSize(400, 600);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+		setTitle("Channels");
+		return null;
+	}
+}

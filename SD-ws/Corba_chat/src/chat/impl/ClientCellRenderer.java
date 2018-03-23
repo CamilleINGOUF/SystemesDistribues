@@ -1,16 +1,24 @@
 package chat.impl;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+
+import org.omg.CORBA.Any;
 
 import chat.ChatClient;
 
 public class ClientCellRenderer extends JLabel implements ListCellRenderer<ChatClient> {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final Color HIGHLIGHT_COLOR = new Color(0, 0, 128);
 
 	public ClientCellRenderer() 
@@ -25,10 +33,12 @@ public class ClientCellRenderer extends JLabel implements ListCellRenderer<ChatC
 	{
 		try {
 			setText(value.getName());
-			//			Image image = value.getYourAvatar().getImage(); // transform it 
-			//			Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-			//			ImageIcon img = new ImageIcon(newimg);
-			//			setIcon(img);
+			Any anyImage = value.getImage();
+			ImageIcon imageI = (ImageIcon)anyImage.extract_Value();
+			Image image = imageI.getImage();
+			Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); 
+			ImageIcon img = new ImageIcon(newimg);
+			setIcon(img);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -37,8 +47,10 @@ public class ClientCellRenderer extends JLabel implements ListCellRenderer<ChatC
 			setBackground(HIGHLIGHT_COLOR);
 			setForeground(Color.WHITE);
 		} else {
+			chat.Color col = value.getColor();
+			Color color = new Color(col.getR(), col.getG(), col.getB());
 			setBackground(Color.white);
-			setForeground(Color.black);
+			setForeground(color);
 
 		}
 		return this;

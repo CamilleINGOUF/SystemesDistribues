@@ -46,8 +46,9 @@ public class ClientGUY extends JFrame implements Observer
 
 	private String name;
 	private ImageIcon image;
+	private String channel;
 
-	public ClientGUY(String[] args) 
+	public ClientGUY(String[] args)
 	{
 
 		name = JOptionPane.showInputDialog(this,"What's your name ?");
@@ -58,10 +59,12 @@ public class ClientGUY extends JFrame implements Observer
 		if(name.equals(""))
 			name = new String("Guest");
 
-		//		selectImage();
+		selectImage();
+		client = new Client(name, args,color,image);
+		
+		selectChannel();
 
 		BuildUI();
-		client.setColor(color);
 
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,8 +72,14 @@ public class ClientGUY extends JFrame implements Observer
 		setResizable(false);
 		setVisible(true);
 		setTitle("Client - "+name);
-		client = new Client(name, args);
 		client.registerObserver(this);
+	}
+	
+	private void selectChannel()
+	{
+		String[] channels = client.getChannelsFromServer();
+		ChannelFrame ch = new ChannelFrame(channels);
+		client.channel = ch.name;
 	}
 
 	private void selectImage() 
@@ -143,8 +152,7 @@ public class ClientGUY extends JFrame implements Observer
 
 	private void closeWindow() 
 	{
-		//		client.shutdown();
-		//TODO
+		client.shutdown();
 		System.exit(0);
 	}
 
@@ -158,10 +166,13 @@ public class ClientGUY extends JFrame implements Observer
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public void printToPane(JTextPane tp, Message message) throws BadLocationException
 	{
 		StyleContext sc = StyleContext.getDefaultStyleContext();
-		AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, (Color)message.getColor());
+		chat.Color col = message.getColor();
+		Color color = new Color(col.getR(), col.getG(), col.getB());
+		AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, color);
 
 		aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 		aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
@@ -188,6 +199,7 @@ public class ClientGUY extends JFrame implements Observer
 		repaint();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void update(String message) 
 	{

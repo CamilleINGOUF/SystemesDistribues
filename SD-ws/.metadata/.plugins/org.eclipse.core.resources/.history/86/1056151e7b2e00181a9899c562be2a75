@@ -1,0 +1,16 @@
+package chat.impl;
+
+import java.util.ArrayList;
+
+import chat.ChatChannelPOA;
+import chat.ChatClient;
+import chat.Message;
+
+public class Channel extends ChatChannelPOA 
+{
+	public String name;
+	
+	public Channel(String name) {
+		this.name = name;
+	}
+}

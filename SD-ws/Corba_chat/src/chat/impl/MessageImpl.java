@@ -3,9 +3,10 @@ package chat.impl;
 import java.awt.Color;
 import java.util.ArrayList;
 
-import org.omg.CORBA.Any;
+import org.omg.PortableServer.POA;
 
 import chat.ChatClient;
+import chat.ColorHelper;
 import chat.MessagePOA;
 
 public class MessageImpl extends MessagePOA {
@@ -16,12 +17,15 @@ public class MessageImpl extends MessagePOA {
 	
 	private Color color;
 	
-	public MessageImpl(String message, ChatClient sender, ArrayList<ChatClient> targets, Color color) 
+	private POA rootPOA;
+	
+	public MessageImpl(String message, ChatClient sender, ArrayList<ChatClient> targets, Color color, POA rootPOA) 
 	{
 		this.message = message;
 		this.sender = sender;
 		this.targets = targets;
 		this.color = color;
+		this.rootPOA = rootPOA;
 	}
 	
 	@Override
@@ -47,6 +51,20 @@ public class MessageImpl extends MessagePOA {
 
 	@Override
 	public chat.Color getColor() {
-		return null;
+		chat.Color colRef = null;
+
+		ColorImpl col = new ColorImpl(color);
+		org.omg.CORBA.Object ref;
+		try 
+		{
+			ref = rootPOA.servant_to_reference(col);
+			colRef = ColorHelper.narrow(ref);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+		return colRef;
 	}
 }

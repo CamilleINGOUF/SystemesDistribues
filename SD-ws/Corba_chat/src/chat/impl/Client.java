@@ -3,8 +3,12 @@ package chat.impl;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
+import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 import org.omg.PortableServer.POA;
 import org.omg.PortableServer.POAHelper;
@@ -14,6 +18,7 @@ import chat.ChatClientHelper;
 import chat.ChatClientPOA;
 import chat.ChatServer;
 import chat.ChatServerHelper;
+import chat.ColorHelper;
 import chat.Message;
 import chat.MessageHelper;
 
@@ -29,11 +34,17 @@ public class Client extends ChatClientPOA {
 
 	private ArrayList<Observer> obs;
 	private Color color;
+	
+	private ImageIcon image;
+	
+	public String channel;
 
-	public Client(String name, String[] args) 
+	public Client(String name, String[] args, Color color2, ImageIcon image) 
 	{
 		try {
 			this.name = name;
+			this.color = color2;
+			this.image = image;
 			obs = new ArrayList<>();
 
 			orb = ORB.init(args, null);
@@ -67,11 +78,7 @@ public class Client extends ChatClientPOA {
 	{
 		return name;
 	}
-
-	public static void main(String[] args) {
-		new Client("Name", args);
-	}
-
+	
 	@Override
 	public void printMessage(Message message) 
 	{
@@ -86,14 +93,14 @@ public class Client extends ChatClientPOA {
 	public void registerObserver(Observer o)
 	{
 		obs.add(o);
-		server.register(cref);
+		server.registerChannel(cref, channel);
 	}
 
 	public Message createMessage(String message, ChatClient sender, ArrayList<ChatClient> targets)
 	{
 		Message mesRef = null;
 
-		MessageImpl mes = new MessageImpl(message,sender,targets,color);
+		MessageImpl mes = new MessageImpl(message,sender,targets,color,rootPOA);
 		org.omg.CORBA.Object ref;
 		try 
 		{
@@ -120,6 +127,11 @@ public class Client extends ChatClientPOA {
 			e.printStackTrace();
 		}
 	}
+	
+	public String[] getChannelsFromServer()
+	{
+		return server.getChannels();
+	}
 
 	@Override
 	public void updateClientList(ChatClient[] clients) 
@@ -131,5 +143,37 @@ public class Client extends ChatClientPOA {
 	public void setColor(Color color) 
 	{
 		this.color = color;
+	}
+
+	@Override
+	public chat.Color getColor() {
+		chat.Color colRef = null;
+
+		ColorImpl col = new ColorImpl(color);
+		org.omg.CORBA.Object ref;
+		try 
+		{
+			ref = rootPOA.servant_to_reference(col);
+			colRef = ColorHelper.narrow(ref);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+		return colRef;
+	}
+
+	@Override
+	public void shutdown() {
+		server.remove(cref);
+	}
+
+	@Override
+	public Any getImage() {
+		Any any = orb.create_any();
+//		TypeCode tc = createTypeCode((Serializable)image, any, orb);
+		any.insert_Value((Serializable)image);
+		return any;
 	}
 }

@@ -1,0 +1,11 @@
+package chat.impl;
+
+import javax.swing.JFrame;
+
+public class ChannelFrame extends JFrame
+{
+	public ChannelFrame() 
+	{
+		
+	}
+}

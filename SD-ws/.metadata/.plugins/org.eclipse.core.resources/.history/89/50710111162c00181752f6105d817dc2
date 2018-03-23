@@ -1,0 +1,26 @@
+package chat.impl;
+
+public class ColorImpl extends chat.ColorPOA
+{
+	
+	int r, g, b;
+
+	@Override
+	public int getR() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getG() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getB() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

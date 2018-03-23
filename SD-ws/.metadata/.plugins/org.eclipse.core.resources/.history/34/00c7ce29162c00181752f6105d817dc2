@@ -1,0 +1,32 @@
+package chat.impl;
+
+import java.awt.Color;
+
+public class ColorImpl extends chat.ColorPOA
+{
+	
+	int r, g, b;
+	
+	public ColorImpl(Color color) 
+	{
+		r = color.getRed();
+		g = color.getGreen();
+		b = color.getBlue();
+	}
+
+	@Override
+	public int getR() {
+		return r;
+	}
+
+	@Override
+	public int getG() {
+		return g;
+	}
+
+	@Override
+	public int getB() {
+		return b;
+	}
+	
+}

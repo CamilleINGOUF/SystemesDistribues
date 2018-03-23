@@ -1,0 +1,35 @@
+package chat.impl;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JList;
+
+public class ChannelFrame extends JFrame
+{
+	String[] channels;
+	
+	JList<String> list;
+	
+	public ChannelFrame(String[] channels) 
+	{
+		this.channels = channels;
+		getContentPane().setLayout(new BorderLayout());
+		
+		list = new JList<>(channels);
+		getContentPane().add(list, BorderLayout.CENTER);
+	}
+	
+	public String run()
+	{	
+		setSize(400, 600);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+		setTitle("Channels");
+		
+		notify();
+		
+		return null;
+	}
+}

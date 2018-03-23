@@ -1,0 +1,42 @@
+module chat{
+
+	interface Message;
+
+ 	interface Color
+ 	{
+ 		long getR();
+ 		long getG();
+ 		long getB();
+ 	};
+
+ 	interface ChatClient{
+ 		string getName();
+ 		typedef sequence<ChatClient> clients;
+ 		void updateClientList(in clients clients);
+ 		void printMessage(in Message message);
+		Color getColor();
+		void shutdown();
+		any getImage();
+ 	};
+
+	interface Message {
+		ChatClient getSender();
+        boolean isForAll();
+		
+		typedef sequence<ChatClient> clients;
+		clients getTargets();
+		
+		string getMessage();
+		Color getColor();
+	};
+ 	
+ 	interface ChatServer{
+ 		void register(in ChatClient client);
+ 		void remove(in ChatClient client);
+ 		void sendMessage(in Message message);
+ 	};
+ 	
+ 	interface Channel{
+ 		
+ 	};
+};

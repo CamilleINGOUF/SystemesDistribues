@@ -1,0 +1,31 @@
+package chat.impl;
+
+import java.util.ArrayList;
+
+import chat.ChatChannelPOA;
+import chat.ChatClient;
+import chat.Message;
+
+public class Channel extends ChatChannelPOA {
+
+	private ArrayList<ChatClient> clients;
+	
+	@Override
+	public void register(ChatClient client) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(ChatClient client) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void sendMessage(Message message) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

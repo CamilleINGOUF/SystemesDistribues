@@ -1,7 +1,0 @@
-module callbacks {
-	interface CallBackClient;
-	
-	interface CallBackClient(){
-		
-	}
-}
