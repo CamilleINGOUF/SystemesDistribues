@@ -1,0 +1,19 @@
+package tcp;
+
+import java.net.Socket;
+
+public class SubServer implements Runnable 
+{
+	ArenaServer  arena;
+	
+	public SubServer(ArenaServer arenaServer, Socket socket) 
+	{
+		
+	}
+
+	@Override
+	public void run() 
+	{
+		
+	}
+}

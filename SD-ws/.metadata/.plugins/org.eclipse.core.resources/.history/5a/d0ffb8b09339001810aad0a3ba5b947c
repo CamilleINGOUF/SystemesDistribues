@@ -1,0 +1,76 @@
+package server;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.HashMap;
+import java.util.Vector;
+
+import common.ServerInterface;
+
+
+public class ArenaServer implements ServerInterface {
+	
+	public static final int PORT = 6666;
+	
+	private Vector<Socket> clients = new Vector<Socket>() ;
+	
+	private HashMap<String, Integer> reservations = new HashMap<String, Integer>() ;
+	
+	private int capacity = 5000;
+	
+	ServerInterface stub;
+	Registry registry;
+	
+	public ArenaServer() {
+		
+		try {
+			String name = "Server";
+			stub = (ServerInterface)UnicastRemoteObject.exportObject(this,0);
+			registry = LocateRegistry.createRegistry(1099);
+			registry.rebind(name, stub);
+			
+			System.out.println("Arena Server waiting for connections");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			
+			ServerSocket serverSocket = new ServerSocket(PORT);
+			
+			System.out.println("Arena Server waiting for connections");
+			
+			while (true){
+				Socket socket = serverSocket.accept() ;
+				System.out.println("Arena Server connection received");
+				clients.add(socket) ;
+				Thread t = new Thread(new SubServer(this, socket));
+				t.start() ;
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	Vector<Socket> getClients() {
+		return clients;
+	}
+
+	HashMap<String, Integer> getReservations() {
+		return reservations;
+	}
+	
+	int getCapacity() {
+		return capacity;
+	}
+
+	public static void main(String[] args) {
+		new ArenaServer() ;
+	}
+}
